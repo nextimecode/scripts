@@ -24,20 +24,13 @@ WARNING=$BRIGHT_YELLOW
 INFO=$BRIGHT_CYAN $INFO_EMOJI
 SUCCESS=$BRIGHT_GREEN
 
-# Check Mark (✅): \u2705
-# Warning (⚠️): \u26A0\uFE0F
-# Gear (⚙️): \u2699\uFE0F
-# Cross Mark (❌): \u274C
-# Magnifying Glass (🔍): \u1F50D
-
 # Emojis
-SUCCESS_EMOJI=$(echo -e "\u2705")
-WARNING_EMOJI=$(echo -e "\u26A0\uFE0F")
-EXECUTING_EMOJI=$(echo -e "\u2699\uFE0F")
-ERROR_EMOJI=$(echo -e "\u274C")
-CHECKING_EMOJI=$(echo -e "\u1F50D")
-INFO_EMOJI=$(echo -e "\u2139\uFE0F")
-
+SUCCESS_EMOJI=✅
+WARNING_EMOJI=⚠️
+EXECUTING_EMOJI=⚙️
+ERROR_EMOJI=❌
+CHECKING_EMOJI=🔍
+INFO_EMOJI=ℹ️ 
 
 # Text Styles
 SIMPLE_TEXT='\033[0m'
