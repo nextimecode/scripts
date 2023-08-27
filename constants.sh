@@ -30,7 +30,7 @@ WARNING_EMOJI=⚠️
 EXECUTING_EMOJI=⚙️
 ERROR_EMOJI=❌
 CHECKING_EMOJI=🔍
-INFO_EMOJI=ℹ️ 
+INFO_EMOJI=ℹ️
 
 # Text Styles
 SIMPLE_TEXT='\033[0m'
