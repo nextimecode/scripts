@@ -8,7 +8,7 @@ if [ -z "$1" ]; then
   exit 1
 fi
 
-printf "\n${INFO}Executing the git add -A command${RESET}\n"
+printf "\n${INFO}⚙️ Executing the git add -A command...${RESET}"
 git add -A && { printf "\n${SUCCESS}Success: Changes added successfully.${RESET}\n"; } || { printf "\n${ERROR}Error: Failed to add changes.${RESET}\n"; exit 1; }
 
 
