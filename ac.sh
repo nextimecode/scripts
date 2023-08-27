@@ -36,4 +36,4 @@ printf "\n${INFO}Executing the git push command${RESET}\n"
 git push && { printf "${SUCCESS}${SUCESS_EMOJI} Success: Changes pushed successfully.${RESET}\n"; } || { printf "${ERROR}${ERROR_EMOJI} Error: Failed to push changes.${RESET}\n"; exit 1; }
 
 
-printf "\n${SUCCESS}${SUCESS_EMOJI} All changes have been committed and pushed successfully.${RESET}\n"
+printf "\n${SUCCESS}${SUCESS_EMOJI} All changes have been committed and pushed successfully.${RESET}\n\n"
