@@ -5,17 +5,26 @@ source /Users/pedroduarte/Dev/scripts/constants.sh
 
 # Verifica se um argumento foi passado
 if [ "$#" -ne 1 ]; then
-    echo "${RED}Uso correto: $0 nome_do_projeto${RESET}"
+    printf "${ERROR}❌ Correct usage: $0 project_name${RESET}"
     exit 1
 fi
 
 PROJETO=$1
+BASE_DIR="/Users/pedroduarte/Dev"
+QC_DIR="$BASE_DIR/qc"
+QC_OLD_DIR="$BASE_DIR/qc-old"
 
-# Verifica se o diretório do projeto existe
-if [ ! -d "/Users/pedroduarte/Dev/$PROJETO" ]; then
-    echo "${RED}O projeto $PROJETO não existe.${RESET}"
+# Verifica se o diretório do projeto existe em uma das pastas
+if [ -d "$BASE_DIR/$PROJETO" ]; then
+    PROJETO_DIR="$BASE_DIR/$PROJETO"
+elif [ -d "$QC_DIR/$PROJETO" ]; then
+    PROJETO_DIR="$QC_DIR/$PROJETO"
+elif [ -d "$QC_OLD_DIR/$PROJETO" ]; then
+    PROJETO_DIR="$QC_OLD_DIR/$PROJETO"
+else
+    printf "${ERROR}❌ The project ${BRIGHT_PURPLE}%s${INFO} does not exist.${RESET}\n" "$PROJETO"
     exit 1
 fi
 
-echo "${BRIGHT_CYAN}Abrindo o projeto $PROJETO no Visual Studio Code...${RESET}"
-command code "/Users/pedroduarte/Dev/$PROJETO"
+printf "${INFO}Opening project ${BRIGHT_PURPLE}%s${INFO} in Visual Studio Code...${RESET}\n" "$PROJETO"
+command code "$PROJETO_DIR"
