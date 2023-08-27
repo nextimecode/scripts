@@ -10,6 +10,13 @@ display_colors_and_styles() {
     printf "${style}${description}${RESET}\n"
 }
 
+printf "\n${BOLD_TEXT}INFORMATION COLORS:\n"
+
+display_colors_and_styles "ERROR" $ERROR
+display_colors_and_styles "WARNING" $WARNING
+display_colors_and_styles "INFO" $INFO
+display_colors_and_styles "SUCCESS" $SUCCESS
+
 printf "\n${BOLD_TEXT}COLORS:\n"
 
 display_colors_and_styles "BLUE" $BLUE
@@ -25,6 +32,7 @@ display_colors_and_styles "DARK_GRAY" $DARK_GRAY
 display_colors_and_styles "BRIGHT_RED" $BRIGHT_RED
 display_colors_and_styles "BRIGHT_GREEN" $BRIGHT_GREEN
 display_colors_and_styles "BRIGHT_BLUE" $BRIGHT_BLUE
+display_colors_and_styles "BRIGHT_YELLOW" $BRIGHT_YELLOW
 display_colors_and_styles "BRIGHT_PURPLE" $BRIGHT_PURPLE
 display_colors_and_styles "BRIGHT_CYAN" $BRIGHT_CYAN
 display_colors_and_styles "WHITE" $WHITE
