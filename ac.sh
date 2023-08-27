@@ -8,7 +8,7 @@ if [ -z "$1" ]; then
   exit 1
 fi
 
-printf "\n${INFO}${INFO_EMOJI} Executing the git add -A command...${RESET}\n"
+printf "\n${INFO}Executing the git add -A command...${RESET}\n"
 git add -A && { printf "${SUCCESS}${SUCESS_EMOJI} Success: Changes added successfully.${RESET}\n"; } || { printf "${ERROR}${ERROR_EMOJI} Error: Failed to add changes.${RESET}\n"; exit 1; }
 
 
@@ -20,7 +20,7 @@ else
   printf "${SUCCESS}${SUCESS_EMOJI} Success: No unstaged changes.${RESET}\n"
 fi
 
-printf "\n${INFO}${INFO_EMOJI} Executing the git commit command${RESET}\n"
+printf "\n${INFO}Executing the git commit command${RESET}\n"
 git commit -m "$1" && { printf "${SUCCESS}${SUCESS_EMOJI} Success: Changes committed successfully.${RESET}\n"; } || { printf "${ERROR}${ERROR_EMOJI} Error: Failed to commit changes.${RESET}\n"; exit 1; }
 
 
@@ -32,7 +32,7 @@ else
   printf "${SUCCESS}${SUCESS_EMOJI} Success: No uncommitted changes.${RESET}\n"
 fi
 
-printf "\n${INFO}${INFO_EMOJI} Executing the git push command${RESET}\n"
+printf "\n${INFO}Executing the git push command${RESET}\n"
 git push && { printf "${SUCCESS}${SUCESS_EMOJI} Success: Changes pushed successfully.${RESET}\n"; } || { printf "${ERROR}${ERROR_EMOJI} Error: Failed to push changes.${RESET}\n"; exit 1; }
 
 
