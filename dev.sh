@@ -45,10 +45,10 @@ elif [ "$drive_type" = "odin" ]; then
 
   sleep 80
 
-  echo "${INFO}Executing the rails s -p 3000 -b 0.0.0.0${RESET}"
+  echo "${INFO}Executing the rails s -p 3003 -b 0.0.0.0${RESET}"
   osascript -e 'tell application "System Events" to tell process "Terminal" to keystroke "t" using command down'
   osascript -e 'tell application "Terminal" to do script "cd /Users/pedroduarte/Dev/qc-old/odin" in selected tab of the front window'
-  osascript -e 'tell application "Terminal" to do script "rails s -p 3000 -b 0.0.0.0" in selected tab of the front window'
+  osascript -e 'tell application "Terminal" to do script "rails s -p 3003 -b 0.0.0.0" in selected tab of the front window'
 
 else
   echo "${INFO}Executing the pnpm i && pnpm dev...${RESET}"

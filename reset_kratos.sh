@@ -24,5 +24,7 @@ rm -rf node_modules
 rm -rf pnpm-lock.yaml
 
 pnpm i
+pnpm clean:cache
+pnpm clean:cache:ts
 pnpm bootstrap
 pnpm build
