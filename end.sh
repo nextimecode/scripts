@@ -32,5 +32,6 @@ else
   printf "${SUCCESS}No uncommitted changes.${RESET}\n"
 fi
 
-printf "\n${INFO}Executing the git push command${RESET}\n"
-git push && { printf "${SUCCESS}✅ Changes pushed successfully.${RESET}\n\n"; } || { printf "${ERROR}❌ Error: Failed to push changes.${RESET}\n\n"; exit 1; }
+printf "\n${INFO}Executing the git push command${RESET}\n\n"
+
+git push && { printf "\n\n${SUCCESS}\n\n✅ Congratulations, Pedro! Changes pushed successfully.${RESET}\n\n"; } || { printf "${ERROR}❌ Error: Failed to push changes.${RESET}\n\n"; exit 1; }
