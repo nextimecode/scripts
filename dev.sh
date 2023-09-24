@@ -14,7 +14,7 @@ if [ "$drive_type" = "atreus" ]; then
     cd "$target_dir"
   fi
 
-  echo "${INFO}Executing the the pnpm i && pnpm atreus:dev${RESET}"
+  echo "${INFO}Executing pnpm atreus:dev${RESET}"
   pnpm atreus:dev
 
 elif [ "$drive_type" = "skaldic" ]; then
@@ -25,7 +25,7 @@ elif [ "$drive_type" = "skaldic" ]; then
     cd "$target_dir"
   fi
 
-  echo "${INFO}Executing the pnpm i && pnpm skaldic:dev${RESET}"
+  echo "${INFO}Executing pnpm skaldic:dev${RESET}"
   pnpm skaldic:dev
 
 elif [ "$drive_type" = "odin" ]; then
@@ -49,10 +49,10 @@ elif [ "$drive_type" = "odin" ]; then
   osascript -e 'tell application "Terminal" to do script "rails s -p 3003 -b 0.0.0.0" in selected tab of the front window'
 
 elif [ "$drive_type" = "telperion" ]; then
-  echo "${INFO}Executing the the pnpm i && pnpm telperion:dev${RESET}"
+  echo "${INFO}Executing pnpm telperion:dev${RESET}"
     pnpm telperion:dev
 
 else
-  echo "${INFO}Executing the pnpm i && pnpm dev...${RESET}"
+  echo "${INFO}Executing pnpm dev...${RESET}"
   pnpm dev
 fi
