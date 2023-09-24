@@ -34,4 +34,4 @@ fi
 
 printf "\n${INFO}Executing the git push command${RESET}\n\n"
 
-git push && { printf "${SUCCESS}\n✅ Congratulations, Pedro! Changes pushed successfully.${RESET}\n\n"; } || { printf "\n\n${ERROR}\n\n❌ Error: Failed to push changes.${RESET}\n\n"; exit 1; }
+git push && { printf "${SUCCESS}\n✅ Congratulations, Pedro! Changes pushed successfully.${RESET}\n\n"; } || { printf "${ERROR}\n❌ Error: Failed to push changes.${RESET}\n\n"; exit 1; }
