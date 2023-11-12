@@ -13,7 +13,8 @@ PROJETO=$1
 BASE_DIR="/Users/pedroduarte/Dev"
 QC_DIR="$BASE_DIR/qc"
 QC_OLD_DIR="$BASE_DIR/qc-old"
-CLIENTS="$BASE_DIR/CLIENTES"
+CLIENTS="$BASE_DIR/clientes"
+TEMPLATES="$BASE_DIR/templates"
 
 # Verifica se o diretório do projeto existe em uma das pastas
 if [ -d "$BASE_DIR/$PROJETO" ]; then
@@ -24,6 +25,8 @@ elif [ -d "$QC_OLD_DIR/$PROJETO" ]; then
     PROJETO_DIR="$QC_OLD_DIR/$PROJETO"
 elif [ -d "$CLIENTS/$PROJETO" ]; then
     PROJETO_DIR="$CLIENTS/$PROJETO"
+elif [ -d "$TEMPLATES/$PROJETO" ]; then
+    PROJETO_DIR="$TEMPLATES/$PROJETO"
 else
     printf "${ERROR}❌ The project ${BRIGHT_PURPLE}%s${INFO} does not exist.${RESET}\n" "$PROJETO"
     exit 1

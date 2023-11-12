@@ -25,6 +25,12 @@ for QCX_PROJ in "${QCX_PROJECTS[@]}"; do
 done
 
 # Open the Pull Requests page based on the domain
+# Check if the project is Rohan
+if [ "$PROJETO" = "rohan" ]; then
+    printf "${INFO}Opening the Pull Requests for project ${BRIGHT_PURPLE}%s${INFO} on GitHub under domain rohannextime...${RESET}\n" "$PROJETO"
+    open -a "Google Chrome" "https://github.com/rohannextime/web"
+    exit 0
+fi
 if [ "$IS_QCX_PROJECT" = true ]; then
     printf "${INFO}Opening the Pull Requests for project ${BRIGHT_PURPLE}%s${INFO} on GitHub under domain qcx...${RESET}\n" "$PROJETO"
     open -a "Google Chrome" "https://github.com/qcx/$PROJETO/pulls"
