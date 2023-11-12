@@ -28,7 +28,7 @@ done
 # Check if the project is Rohan
 if [ "$PROJETO" = "rohan" ]; then
     printf "${INFO}Opening the Pull Requests for project ${BRIGHT_PURPLE}%s${INFO} on GitHub under domain rohannextime...${RESET}\n" "$PROJETO"
-    open -a "Google Chrome" "https://github.com/rohannextime/web"
+    open -a "Google Chrome" "https://github.com/rohannextime/web/pulls"
     exit 0
 fi
 if [ "$IS_QCX_PROJECT" = true ]; then
