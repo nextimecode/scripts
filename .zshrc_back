@@ -1,0 +1,106 @@
+export ZSH="$HOME/.oh-my-zsh"
+ZSH_THEME="spaceship"
+plugins=(git)
+source $ZSH/oh-my-zsh.sh
+export PATH=/opt/homebrew/bin:$PATH
+export LDFLAGS="-L/opt/homebrew/opt/openssl@1.1/lib"
+export CPPFLAGS="-I/opt/homebrew/opt/openssl@1.1/include"
+export PKG_CONFIG_PATH="/opt/homebrew/opt/openssl@1.1/lib/pkgconfig"
+export RUBY_CFLAGS=-DUSE_FFI_CLOSURE_ALLOC
+export PATH="$(brew --prefix)/opt/openssl@1.1/bin:$PATH"
+export optflags="-Wno-error=implicit-function-declaration"
+export OBJC_DISABLE_INITIALIZE_FORK_SAFETY=YES
+export NVM_DIR=~/.nvm
+export PATH=$PATH:/caminho/para/o/diretorio_do_executavel
+source $(brew --prefix nvm)/nvm.sh
+source /Users/pedroduarte/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
+SPACESHIP_PROMPT_ORDER=(
+  user          
+  dir           
+  host          
+  git           
+  hg            
+  exec_time     
+  line_sep      
+  jobs          
+  exit_code     
+  char          
+)
+SPACESHIP_USER_SHOW=always
+SPACESHIP_PROMPT_ADD_NEWLINE=false
+SPACESHIP_CHAR_SYMBOL="❯"
+SPACESHIP_CHAR_SUFFIX=" "
+if [[ ! -f $HOME/.local/share/zinit/zinit.git/zinit.zsh ]]; then
+    print -P "%F{33} %F{220}Installing %F{33}ZDHARMA-CONTINUUM%F{220} Initiative Plugin Manager (%F{33}zdharma-continuum/zinit%F{220})…%f"
+    command mkdir -p "$HOME/.local/share/zinit" && command chmod g-rwX "$HOME/.local/share/zinit"
+    command git clone https://github.com/zdharma-continuum/zinit "$HOME/.local/share/zinit/zinit.git" && \
+        print -P "%F{33} %F{34}Installation successful.%f%b" || \
+        print -P "%F{160} The clone has failed.%f%b"
+fi
+source "$HOME/.local/share/zinit/zinit.git/zinit.zsh"
+autoload -Uz _zinit
+(( ${+_comps} )) && _comps[zinit]=_zinit
+zinit light zdharma/fast-syntax-highlighting
+zinit light zsh-users/zsh-autosuggestions
+zinit light zsh-users/zsh-completions
+# pnpm
+export PNPM_HOME="/Users/pedroduarte/Library/pnpm"
+case ":$PATH:" in
+  *":$PNPM_HOME:"*) ;;
+  *) export PATH="$PNPM_HOME:$PATH" ;;
+esac
+# pnpm end
+export NPM_TOKEN="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"
+
+# my scripts
+SCRIPTS_PATH="/Users/pedroduarte/Dev/scripts"
+alias end="$SCRIPTS_PATH/end.sh"
+alias help="$SCRIPTS_PATH/help.sh"
+alias display="$SCRIPTS_PATH/display.sh"
+alias jira="$SCRIPTS_PATH/jira.sh"
+alias insta="$SCRIPTS_PATH/insta.sh"
+alias pr="$SCRIPTS_PATH/pr.sh"
+alias odin="$SCRIPTS_PATH/odin.sh"
+alias meet="$SCRIPTS_PATH/meet.sh"
+alias nextjs="$SCRIPTS_PATH/nextjs.sh"
+alias yavanna="$SCRIPTS_PATH/yavanna.sh"
+alias vs="$SCRIPTS_PATH/vs.sh"
+alias rkratos="$SCRIPTS_PATH/reset_kratos.sh"
+alias calendar="$SCRIPTS_PATH/calendar.sh"
+alias drive="$SCRIPTS_PATH/drive.sh"
+alias translate="$SCRIPTS_PATH/translate.sh"
+alias github="$SCRIPTS_PATH/github.sh"
+alias slack="$SCRIPTS_PATH/slack.sh"
+alias whats="$SCRIPTS_PATH/whats.sh"
+alias gather="$SCRIPTS_PATH/gather.sh"
+alias close="$SCRIPTS_PATH/close.sh"
+alias dev="$SCRIPTS_PATH/dev.sh"
+alias endgame="$SCRIPTS_PATH/endgame.sh"
+alias figma="$SCRIPTS_PATH/figma.sh"
+alias up="$SCRIPTS_PATH/update.sh"
+alias update="$SCRIPTS_PATH/update.sh"
+alias build="pnpm build"
+alias b="pnpm build"
+alias i="pnpm i"
+alias install="pnpm install"
+alias clean="pnpm run clean"
+alias lint="pnpm run lint"
+alias audit="pnpm run audit"
+alias typecheck="pnpm run typecheck"
+alias go="pnpm run go"
+
+# my projects
+
+# rohan
+alias dunharrow="$SCRIPTS_PATH/projects/dunharrow.sh"
+alias edoras="$SCRIPTS_PATH/projects/edoras.sh"
+alias westfold="$SCRIPTS_PATH/projects/westfold.sh"
+
+# yavanna
+alias laurelin="$SCRIPTS_PATH/projects/laurelin.sh"
+alias telperion="$SCRIPTS_PATH/projects/telperion.sh"
+
+# kratos
+alias atreus="$SCRIPTS_PATH/projects/atreus.sh"
+alias skaldic="$SCRIPTS_PATH/projects/skaldic.sh"
+alias sleipnir="$SCRIPTS_PATH/projects/sleipnir.sh"

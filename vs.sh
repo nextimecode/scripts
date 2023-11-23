@@ -12,7 +12,7 @@ fi
 PROJETO=$1
 BASE_DIR="/Users/pedroduarte/Dev"
 QC_DIR="$BASE_DIR/qc"
- ="$BASE_DIR/qc-old"
+QC_OLD_DIR="$BASE_DIR/qc-old"
 CLIENTS="$BASE_DIR/clientes"
 TEMPLATES="$BASE_DIR/templates"
 EDUCATION="$BASE_DIR/education" 

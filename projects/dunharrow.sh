@@ -3,5 +3,5 @@
 # Import the constants
 source /Users/pedroduarte/Dev/scripts/constants.sh
 
-echo "${INFO}Executing pnpm rohirrim:dev${RESET}"
-  pnpm rohirrim:dev
+echo "${INFO}Executing pnpm dunharrow:dev${RESET}"
+  pnpm dunharrow:dev
