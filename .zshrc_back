@@ -63,9 +63,7 @@ alias pr="$SCRIPTS_PATH/pr.sh"
 alias odin="$SCRIPTS_PATH/odin.sh"
 alias meet="$SCRIPTS_PATH/meet.sh"
 alias nextjs="$SCRIPTS_PATH/nextjs.sh"
-alias yavanna="$SCRIPTS_PATH/yavanna.sh"
 alias vs="$SCRIPTS_PATH/vs.sh"
-alias rkratos="$SCRIPTS_PATH/reset_kratos.sh"
 alias calendar="$SCRIPTS_PATH/calendar.sh"
 alias drive="$SCRIPTS_PATH/drive.sh"
 alias translate="$SCRIPTS_PATH/translate.sh"
@@ -97,10 +95,12 @@ alias edoras="$SCRIPTS_PATH/projects/edoras.sh"
 alias westfold="$SCRIPTS_PATH/projects/westfold.sh"
 
 # yavanna
+alias yavanna="$SCRIPTS_PATH/yavanna.sh"
 alias laurelin="$SCRIPTS_PATH/projects/laurelin.sh"
 alias telperion="$SCRIPTS_PATH/projects/telperion.sh"
 
 # kratos
+alias rkratos="$SCRIPTS_PATH/reset_kratos.sh"
 alias atreus="$SCRIPTS_PATH/projects/atreus.sh"
 alias skaldic="$SCRIPTS_PATH/projects/skaldic.sh"
 alias sleipnir="$SCRIPTS_PATH/projects/sleipnir.sh"
