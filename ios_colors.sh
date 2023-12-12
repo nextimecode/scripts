@@ -4,19 +4,19 @@ echo $BASH_VERSION
 
 # Cores no modo escuro
 declare -A darkModeColors=(
-    [SystemRed]="#FF453A"
-    [SystemOrange]="#FF9F0A"
-    [SystemYellow]="#FFD60A"
-    [SystemGreen]="#30D158"
-    [SystemMint]="#63E6E2"
+    [SystemRed]="#FF453A" 
+    [SystemOrange]="#FF9F0A" #entretenimento
+    [SystemYellow]="#FFD60A" #metaverso
+    [SystemGreen]="#30D158" #tecnologia verde
+    [SystemMint]="#63E6E2" 
     [SystemTeal]="#40CBE0"
     [SystemCyan]="#64D2FF"
-    [SystemBlue]="#0A84FF"
-    [SystemIndigo]="#5E5CE6"
-    [SystemPurple]="#BF5AF2"
+    [SystemBlue]="#0A84FF" #software
+    [SystemIndigo]="#5E5CE6" #ciência
+    [SystemPurple]="#BF5AF2" #inteligência artificial 
     [SystemPink]="#FF375F"
     [SystemBrown]="#A2845E"
-    [SystemGray]="#8E8E93"
+    [SystemGray]="#8E8E93" #robôs
     [SystemGray2]="#636366"
     [SystemGray3]="#48484A"
     [SystemGray4]="#3A3A3C"
