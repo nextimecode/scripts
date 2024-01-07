@@ -4,4 +4,4 @@
 source /Users/pedroduarte/Dev/scripts/constants.sh
 
 echo "${INFO}Opening the JIRA...${RESET}"
-open -a "Google Chrome" "https://qconc.atlassian.net/jira/software/projects/DIST/boards/14"
+open -a "Google Chrome Canary" "https://qconc.atlassian.net/jira/software/projects/DIST/boards/14"
