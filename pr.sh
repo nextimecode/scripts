@@ -33,7 +33,7 @@ if [ "$PROJETO" = "rohan" ]; then
 fi
 if [ "$IS_QCX_PROJECT" = true ]; then
     printf "${INFO}Opening the Pull Requests for project ${BRIGHT_PURPLE}%s${INFO} on GitHub under domain qcx...${RESET}\n" "$PROJETO"
-    open -a "Google Chrome" "https://github.com/qcx/$PROJETO/pulls"
+    open -a "Google Chrome Canary" "https://github.com/qcx/$PROJETO/pulls"
 else
     printf "${INFO}Opening the Pull Requests for project ${BRIGHT_PURPLE}%s${INFO} on GitHub under domain nextimecode...${RESET}\n" "$PROJETO"
     open -a "Google Chrome" "https://github.com/nextimecode/$PROJETO/pulls"
