@@ -11,7 +11,6 @@ export PATH="$(brew --prefix)/opt/openssl@1.1/bin:$PATH"
 export optflags="-Wno-error=implicit-function-declaration"
 export OBJC_DISABLE_INITIALIZE_FORK_SAFETY=YES
 export NVM_DIR=~/.nvm
-export PATH=$PATH:/caminho/para/o/diretorio_do_executavel
 source $(brew --prefix nvm)/nvm.sh
 source /Users/pedroduarte/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
 SPACESHIP_PROMPT_ORDER=(
