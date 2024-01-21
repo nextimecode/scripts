@@ -3,5 +3,7 @@
 # Import the constants
 source /Users/pedroduarte/Dev/scripts/constants.sh
 
-echo "${INFO}Executing pnpm dunharrow:dev${RESET}"
+echo "${INFO}Executing install, build and pnpm dunharrow:dev${RESET}"
+  pnpm install
+  pnpm build
   pnpm dunharrow:dev
