@@ -4,25 +4,25 @@ echo $BASH_VERSION
 
 # Cores no modo escuro
 declare -A darkModeColors=(
-    [SystemRed]="#FF453A" 
-    [SystemOrange]="#FF9F0A" #entretenimento
-    [SystemYellow]="#FFD60A" #metaverso
-    [SystemGreen]="#30D158" #tecnologia verde
-    [SystemMint]="#63E6E2" #gadget
-    [SystemTeal]="#40CBE0"
-    [SystemCyan]="#64D2FF"
-    [SystemBlue]="#0A84FF" #software
-    [SystemIndigo]="#5E5CE6" #ciência
-    [SystemPurple]="#BF5AF2" #inteligência artificial 
-    [SystemPink]="#FF375F"
-    [SystemBrown]="#A2845E"
-    [SystemGray]="#8E8E93" #robôs
-    [SystemGray2]="#636366" #carros autônomos
-    [SystemGray3]="#48484A"
-    [SystemGray4]="#3A3A3C"
-    [SystemGray5]="#2C2C2E"
-    [SystemGray6]="#1C1C1E"
-    [SystemWhite]="#FFFFFF"
+    [SystemRed]="#FF453A" # Vermelho Vivo
+    [SystemOrange]="#FF9F0A" #entretenimento Laranja Brilhante
+    [SystemYellow]="#FFD60A" #metaverso Amarelo Sol
+    [SystemGreen]="#30D158" #tecnologia verde Verde Esmeralda Claro
+    [SystemMint]="#63E6E2" #gadget Menta Fresco
+    [SystemTeal]="#40CBE0" # Azul-Verde Água
+    [SystemCyan]="#64D2FF" # Ciano Celeste
+    [SystemBlue]="#0A84FF" #software "Azul Céu Brilhante" ou "Azul Royal Claro"
+    [SystemIndigo]="#5E5CE6" #ciência Índigo Suave
+    [SystemPurple]="#BF5AF2" #inteligência artificial Roxo Vibrante
+    [SystemPink]="#FF375F" # Rosa Choque
+    [SystemBrown]="#A2845E" # Marrom Claro
+    [SystemGray]="#8E8E93" #robôs Cinza Médio
+    [SystemGray2]="#636366" #carros autônomos Cinza Escuro
+    [SystemGray3]="#48484A" # Grafite
+    [SystemGray4]="#3A3A3C" # Cinza Profundo
+    [SystemGray5]="#2C2C2E" # Quase Preto
+    [SystemGray6]="#1C1C1E" # Preto Sólido
+    [SystemWhite]="#FFFFFF" # Branco Puro
 )
 
 # Cores no modo claro
