@@ -53,6 +53,7 @@ export NPM_TOKEN="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"
 
 # my scripts
 SCRIPTS_PATH="/Users/pedroduarte/Dev/scripts"
+
 alias end="$SCRIPTS_PATH/end.sh"
 alias help="$SCRIPTS_PATH/help.sh"
 alias h="$SCRIPTS_PATH/help.sh"
@@ -88,6 +89,11 @@ alias ib="i && b"
 alias ibd="i && b && pnpm dev"
 alias t="pnpm typecheck"
 
+# git aliases
+alias pull="git pull"
+alias push="git push"
+alias status="git status"
+
 # my projects
 
 # rohan
@@ -100,16 +106,23 @@ alias yavanna="$SCRIPTS_PATH/yavanna.sh"
 alias laurelin="$SCRIPTS_PATH/projects/laurelin.sh"
 alias telperion="$SCRIPTS_PATH/projects/telperion.sh"
 
-# kratos
-alias rkratos="$SCRIPTS_PATH/reset_kratos.sh"
-alias atreus="$SCRIPTS_PATH/projects/atreus.sh"
-alias skaldic="$SCRIPTS_PATH/projects/skaldic.sh"
-alias sleipnir="$SCRIPTS_PATH/projects/sleipnir.sh"
+# qc projects
+PROJECTS_QC_PATH="$SCRIPTS_PATH/projects/qc"
 
-# odin
-alias odin="$SCRIPTS_PATH/odin.sh"
+alias rkratos="$PROJECTS_QC_PATH/reset_kratos.sh"
+alias atreus="$PROJECTS_QC_PATH/atreus.sh"
+alias skaldic="$PROJECTS_QC_PATH/skaldic.sh"
+alias sleipnir="$PROJECTS_QC_PATH/sleipnir.sh"
+alias odin="$PROJECTS_QC_PATH/odin/odin.sh"
+alias odinb="$PROJECTS_QC_PATH/odin/odinb.sh"
 
-# git aliases
-alias pull="git pull"
-alias push="git push"
-alias status="git status"
+# ruby for odin
+export PATH="$PATH:$HOME/.rvm/bin"
+[[ -s "$HOME/.rvm/scripts/rvm" ]] && . "$HOME/.rvm/scripts/rvm" 
+
+export LDFLAGS="-L/opt/homebrew/opt/openssl@3/lib"
+export CPPFLAGS="-I/opt/homebrew/opt/openssl@3/include"
+export LIBRARY_PATH=$LIBRARY_PATH:$(brew --prefix zstd)/lib/
+
+
+PATH=~/.console-ninja/.bin:$PATH

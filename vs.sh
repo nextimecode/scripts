@@ -12,7 +12,6 @@ fi
 PROJETO=$1
 BASE_DIR="/Users/pedroduarte/Dev"
 QC_DIR="$BASE_DIR/qc"
-QC_OLD_DIR="$BASE_DIR/qc-old"
 CLIENTS="$BASE_DIR/clientes"
 TEMPLATES="$BASE_DIR/templates"
 EDUCATION="$BASE_DIR/education" 
@@ -24,8 +23,8 @@ elif [ -d "$QC_DIR/$PROJETO" ]; then
     PROJETO_DIR="$QC_DIR/$PROJETO"
 elif [ -d "$EDUCATION/$PROJETO" ]; then
     PROJETO_DIR="$EDUCATION/$PROJETO"
-elif [ -d "$QC_OLD_DIR/$PROJETO" ]; then
-    PROJETO_DIR="$QC_OLD_DIR/$PROJETO"
+elif [ -d "$QC_DIR/$PROJETO" ]; then
+    PROJETO_DIR="$QC_DIR/$PROJETO"
 elif [ -d "$CLIENTS/$PROJETO" ]; then
     PROJETO_DIR="$CLIENTS/$PROJETO"
 elif [ -d "$TEMPLATES/$PROJETO" ]; then
