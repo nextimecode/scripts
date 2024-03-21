@@ -36,20 +36,17 @@ elif [ "$drive_type" = "odin" ]; then
 
   sleep 5
 
-  echo "${INFO}Executing the yarn dev:odin${RESET}"
+  echo "${INFO}Executing the odin front${RESET}"
   osascript -e 'tell application "System Events" to tell process "Terminal" to keystroke "t" using command down'
   osascript -e 'tell application "Terminal" to do script "cd /Users/pedroduarte/Dev/qc/odin" in selected tab of the front window'
-  osascript -e 'tell application "Terminal" to do script "nvm use 16" in selected tab of the front window'
-  osascript -e 'tell application "Terminal" to do script "pnpm install" in selected tab of the front window'
-  osascript -e 'tell application "Terminal" to do script "pnpm build" in selected tab of the front window'
-  osascript -e 'tell application "Terminal" to do script "pnpm dev:odin" in selected tab of the front window'
+  osascript -e 'tell application "Terminal" to do script "odin" in selected tab of the front window'
 
-  sleep 60
+  sleep 50
 
-  echo "${INFO}Executing the rails s -p 3003 -b 0.0.0.0${RESET}"
+  echo "${INFO}Executing the odin front${RESET}"
   osascript -e 'tell application "System Events" to tell process "Terminal" to keystroke "t" using command down'
   osascript -e 'tell application "Terminal" to do script "cd /Users/pedroduarte/Dev/qc/odin" in selected tab of the front window'
-  osascript -e 'tell application "Terminal" to do script "rails s -p 3003 -b 0.0.0.0" in selected tab of the front window'
+  osascript -e 'tell application "Terminal" to do script "odinb" in selected tab of the front window'
 
 elif [ "$drive_type" = "telperion" ]; then
   echo "${INFO}Executing pnpm telperion:dev${RESET}"
