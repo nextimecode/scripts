@@ -34,16 +34,12 @@ elif [ "$drive_type" = "odin" ]; then
   osascript -e 'tell application "Terminal" to do script "cd /Users/pedroduarte/Dev/qc/odin" in selected tab of the front window'
   osascript -e 'tell application "Terminal" to do script "redis-server" in selected tab of the front window'
 
-  sleep 5
-
   echo "${INFO}Executing the odin front${RESET}"
   osascript -e 'tell application "System Events" to tell process "Terminal" to keystroke "t" using command down'
   osascript -e 'tell application "Terminal" to do script "cd /Users/pedroduarte/Dev/qc/odin" in selected tab of the front window'
   osascript -e 'tell application "Terminal" to do script "odin" in selected tab of the front window'
 
-  sleep 50
-
-  echo "${INFO}Executing the odin front${RESET}"
+  echo "${INFO}Executing the odin back${RESET}"
   osascript -e 'tell application "System Events" to tell process "Terminal" to keystroke "t" using command down'
   osascript -e 'tell application "Terminal" to do script "cd /Users/pedroduarte/Dev/qc/odin" in selected tab of the front window'
   osascript -e 'tell application "Terminal" to do script "odinb" in selected tab of the front window'
