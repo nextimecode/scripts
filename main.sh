@@ -5,4 +5,5 @@ echo "${INFO}Executing git checkout main${RESET}"
   git checkout main
 echo "${INFO}Executing git pull origin main${RESET}"
   git pull origin main
-
+  pnpm install
+  pnpm build
