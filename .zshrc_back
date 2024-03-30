@@ -87,9 +87,12 @@ alias edoras="$SCRIPTS_PATH/projects/edoras.sh"
 alias westfold="$SCRIPTS_PATH/projects/westfold.sh"
 
 # yavanna
-alias yavanna="$SCRIPTS_PATH/yavanna.sh"
 alias laurelin="$SCRIPTS_PATH/projects/laurelin.sh"
 alias telperion="$SCRIPTS_PATH/projects/telperion.sh"
+
+#aule
+alias angainor="$SCRIPTS_PATH/projects/angainor.sh"
+alias naugrim="$SCRIPTS_PATH/projects/naugrim.sh"
 
 # qc projects
 PROJECTS_QC_PATH="$SCRIPTS_PATH/projects/qc"
