@@ -103,6 +103,7 @@ alias skaldic="$PROJECTS_QC_PATH/skaldic.sh"
 alias sleipnir="$PROJECTS_QC_PATH/sleipnir.sh"
 alias odin="$PROJECTS_QC_PATH/odin/odin.sh"
 alias odinb="$PROJECTS_QC_PATH/odin/odinb.sh"
+alias odinf="$PROJECTS_QC_PATH/odin/odinf.sh"
 
 # ruby for odin
 export PATH="$PATH:$HOME/.rvm/bin"
