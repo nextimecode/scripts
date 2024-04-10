@@ -32,7 +32,11 @@ case ":$PATH:" in
   *":$PNPM_HOME:"*) ;;
   *) export PATH="$PNPM_HOME:$PATH" ;;
 esac
+
+export STORE_PATH=$(pnpm store path --silent)
+
 # pnpm end
+
 export NPM_TOKEN="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"
 
 # my scripts
