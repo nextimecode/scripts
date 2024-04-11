@@ -8,6 +8,15 @@ if [ -z "$1" ]; then
   exit 1
 fi
 
+# Check for --no-verify flag
+NO_VERIFY=""
+for arg in "$@"; do
+  if [ "$arg" = "--no-verify" ]; then
+    NO_VERIFY="--no-verify"
+    break
+  fi
+done
+
 printf "\n${INFO}Executing the git add -A command...${RESET}\n"
 git add -A && { printf "${SUCCESS}Changes added successfully.${RESET}\n"; } || { printf "${ERROR}❌ Error: Failed to add changes.${RESET}\n"; exit 1; }
 
@@ -21,7 +30,7 @@ else
 fi
 
 printf "\n${INFO}Executing the git commit command${RESET}\n"
-git commit -m "$1" && { printf "${SUCCESS}Changes committed successfully.${RESET}\n"; } || { printf "${ERROR}❌ Error: Failed to commit changes.${RESET}\n"; exit 1; }
+git commit -m "$1" $NO_VERIFY && { printf "${SUCCESS}Changes committed successfully.${RESET}\n"; } || { printf "${ERROR}❌ Error: Failed to commit changes.${RESET}\n"; exit 1; }
 
 
 printf "\n${INFO}Checking for uncommitted changes...${RESET}\n"
@@ -34,4 +43,4 @@ fi
 
 printf "\n${INFO}Executing the git push command${RESET}\n\n"
 
-git push && { printf "${SUCCESS}\n✅ Congratulations, Pedro! Changes pushed successfully.${RESET}\n\n"; } || { printf "${ERROR}\n❌ Error: Failed to push changes.${RESET}\n\n"; exit 1; }
+git push $NO_VERIFY && { printf "${SUCCESS}\n✅ Congratulations, Pedro! Changes pushed successfully.${RESET}\n\n"; } || { printf "${ERROR}\n❌ Error: Failed to push changes.${RESET}\n\n"; exit 1; }
