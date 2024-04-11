@@ -388,7 +388,7 @@
     "sideBarSectionHeader.background": "#1C1C1E",
     "sideBarSectionHeader.foreground": "#ffffff",
     "editor.background": "#1C1C1E",
-    "editor.foreground": "#8E8E93",
+    "editor.foreground": "#fff",
     "editorLineNumber.foreground": "#636366",
     "editorLineNumber.activeForeground": "#c7c7c7",
     "editorIndentGuide.background1": "#3A3A3C",
