@@ -3,9 +3,15 @@
 # Import the constants
 source /Users/pedroduarte/Dev/scripts/constants.sh
 
-# Check if an argument was provided
-if [ "$#" -ne 1 ]; then
-    printf "${ERROR}❌ Correct usage: $0 project_name${RESET}\n"
+# Check the number of arguments provided
+if [ "$#" -eq 0 ]; then
+    # Use the GitHub CLI to open the current branch's PR in the web browser
+    printf "${INFO}Opening the current Pull Request in the web browser...${RESET}\n"
+    gh pr view --web
+    exit 0
+elif [ "$#" -ne 1 ]; then
+    # Error message if more than one argument or incorrect usage
+    printf "${ERROR}❌ Error: Only one argument is allowed${RESET}\n"
     exit 1
 fi
 
