@@ -5,9 +5,20 @@ source /Users/pedroduarte/Dev/scripts/constants.sh
 
 # Check the number of arguments provided
 if [ "$#" -eq 0 ]; then
-    # Use the GitHub CLI to open the current branch's PR in the web browser
+    # Attempt to open the current branch's PR in the web browser using the GitHub CLI
     printf "${INFO}Opening the current Pull Request in the web browser...${RESET}\n"
-    gh pr view --web
+    # Capture the output and exit code of `gh pr view --web`
+    output=$(gh pr view --web 2>&1)
+    exit_code=$?
+
+    # Check if the command was successful
+    if [ $exit_code -ne 0 ]; then
+        printf "\n${ERROR}❌ Error: $output${RESET}\n"
+        # If no PR was found, try to create one
+        if echo "$output" | grep -q "no pull requests found"; then
+            gh pr create
+        fi
+    fi
     exit 0
 elif [ "$#" -ne 1 ]; then
     # Error message if more than one argument or incorrect usage
