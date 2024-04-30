@@ -7,7 +7,7 @@ export NVM_DIR="$HOME/.nvm"
 echo "${INFO}Executing cd /Users/pedroduarte/Dev/qc/odin${RESET}"
   cd /Users/pedroduarte/Dev/qc/odin
 echo "\n${INFO}Executing nvm use 16${RESET}"
-  nvm use 16
+  nvm use 18
 echo "\n${INFO}Executing pnpm install${RESET}"
   pnpm install
 echo "\n${INFO}Executing pnpm build${RESET}"
