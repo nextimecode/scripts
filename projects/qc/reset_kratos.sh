@@ -47,4 +47,4 @@ pnpm bootstrap
 echo "\n${INFO}Construindo projetos...${RESET}"
 pnpm build
 
-echo "\n${SUCCESS}Script concluído!${RESET}"
+echo "\n${SUCCESS}✅ Kratos foi resetado com sucesso!${RESET}"

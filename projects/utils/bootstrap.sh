@@ -26,7 +26,15 @@ if [ "$latest_lts_version" != "$current_version" ]; then
   printf "\n${WARNING_EMOJI}${WARNING}  Existe uma nova versão LTS do Node.js disponível: $latest_lts_version${RESET}\n"
   printf "${INFO}Sua versão atual é: ${RESET}$current_version\n"
   printf "${INFO}Considere atualizar usando: ${RESET}nvm install --lts\n\n"
-else
+fi
+  # Verificação da versão do pnpm
+  latest_pnpm_version=$(curl -s https://registry.npmjs.org/pnpm/latest | jq -r '.version')
+  current_pnpm_version=$(pnpm -v)
+  if [ "$latest_pnpm_version" != "$current_pnpm_version" ]; then
+    printf "\n${WARNING_EMOJI}${WARNING}  Existe uma nova versão do pnpm disponível: $latest_pnpm_version${RESET}\n"
+    printf "${INFO}Sua versão atual é: ${RESET}$current_pnpm_version\n"
+    printf "${INFO}Considere atualizar usando: ${RESET}npm install -g pnpm@latest\n\n"
+  else
   # Seleciona uma mensagem aleatória
   RANDOM_MESSAGE=${MESSAGES[$RANDOM % ${#MESSAGES[@]}]}
 
