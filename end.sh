@@ -46,7 +46,7 @@ fi
 
 printf "\n${INFO}Executing the git push command${RESET}\n\n"
 
-git push $NO_VERIFY && { printf "${SUCCESS}\n✅ Congratulations, Pedro! Changes pushed successfully.${RESET}\n\n"; } || { printf "${ERROR}\n❌ Error: Failed to push changes.${RESET}\n\n"; exit 1; }
+git push $NO_VERIFY && { printf "${SUCCESS}\n✅ Congratulations, Pedro! Changes pushed successfully.${RESET}\n\n"; } || { printf "${ERROR}\n❌ Error: Failed to push changes.${RESET}\n"; exit 1; }
 
 # Calculate elapsed time
   END_TIME=$(date +%s)
