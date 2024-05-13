@@ -1,7 +1,7 @@
 #!/bin/sh
 
 # Import the constants
-source /Users/pedroduarte/Dev/scripts/constants.sh
+source /Users/pedroduarte/dev/scripts/constants.sh
 
 display_colors_and_styles() {
     local description=$1

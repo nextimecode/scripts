@@ -1,7 +1,10 @@
 #!/bin/sh
 
+# Start time
+START_TIME=$(date +%s)
+
 # Import the constants
-source /Users/pedroduarte/Dev/scripts/constants.sh
+source /Users/pedroduarte/dev/scripts/constants.sh
 
 if [ -z "$1" ]; then
   printf "\n${ERROR}❌ Error: Commit message is missing.${RESET}\n"
@@ -44,3 +47,9 @@ fi
 printf "\n${INFO}Executing the git push command${RESET}\n\n"
 
 git push $NO_VERIFY && { printf "${SUCCESS}\n✅ Congratulations, Pedro! Changes pushed successfully.${RESET}\n\n"; } || { printf "${ERROR}\n❌ Error: Failed to push changes.${RESET}\n\n"; exit 1; }
+
+# Calculate elapsed time
+  END_TIME=$(date +%s)
+  ELAPSED_TIME=$((END_TIME - START_TIME))
+
+printf "\n${INFO}Time taken: ${ELAPSED_TIME} seconds.${RESET}\n\n"

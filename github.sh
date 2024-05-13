@@ -1,7 +1,7 @@
 #!/bin/sh
 
 # Import the constants
-source /Users/pedroduarte/Dev/scripts/constants.sh
+source /Users/pedroduarte/dev/scripts/constants.sh
 
 # Argument passed to the script
 drive_type=$1

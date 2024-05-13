@@ -1,7 +1,7 @@
-cd /Dev/
+cd /dev/
 
 # Import the constants
-source /Users/pedroduarte/Dev/scripts/constants.sh
+source /Users/pedroduarte/dev/scripts/constants.sh
 
 # Mensagens de Eru Ilúvatar
 MESSAGES=(
@@ -23,7 +23,7 @@ latest_lts_version=$(curl -s https://nodejs.org/dist/index.json | jq -r '[.[] | 
 # Obtém a versão atual do Node.js instalada
 current_version=$(node -v)
 if [ "$latest_lts_version" != "$current_version" ]; then
-  printf "\n${WARNING_EMOJI}${WARNING}  Existe uma nova versão LTS do Node.js disponível: $latest_lts_version${RESET}\n"
+  printf "\n${WARNING_EMOJI}${WARNING} Existe uma nova versão LTS do Node.js disponível: $latest_lts_version${RESET}\n"
   printf "${INFO}Sua versão atual é: ${RESET}$current_version\n"
   printf "${INFO}Considere atualizar usando: ${RESET}nvm install --lts\n\n"
 fi
@@ -31,7 +31,7 @@ fi
   latest_pnpm_version=$(curl -s https://registry.npmjs.org/pnpm/latest | jq -r '.version')
   current_pnpm_version=$(pnpm -v)
   if [ "$latest_pnpm_version" != "$current_pnpm_version" ]; then
-    printf "\n${WARNING_EMOJI}${WARNING}  Existe uma nova versão do pnpm disponível: $latest_pnpm_version${RESET}\n"
+    printf "\n${WARNING_EMOJI}${WARNING} Existe uma nova versão do pnpm disponível: $latest_pnpm_version${RESET}\n"
     printf "${INFO}Sua versão atual é: ${RESET}$current_pnpm_version\n"
     printf "${INFO}Considere atualizar usando: ${RESET}npm install -g pnpm@latest\n\n"
   else

@@ -1,7 +1,7 @@
 #!/bin/sh
 
 # Import the constants
-source /Users/pedroduarte/Dev/scripts/constants.sh
+source /Users/pedroduarte/dev/scripts/constants.sh
 
 # Check the number of arguments provided
 if [ "$#" -eq 0 ]; then
@@ -13,7 +13,7 @@ if [ "$#" -eq 0 ]; then
 
     # Check if the command was successful
     if [ $exit_code -ne 0 ]; then
-        printf "\n${ERROR}❌ Error: $output${RESET}\n"
+        printf "\n${ERROR}${ERROR_EMOJI} Error: $output${RESET}\n"
         # If no PR was found, try to create one
         if echo "$output" | grep -q "no pull requests found"; then
             gh pr create && gh pr view --web
@@ -22,7 +22,7 @@ if [ "$#" -eq 0 ]; then
     exit 0
 elif [ "$#" -ne 1 ]; then
     # Error message if more than one argument or incorrect usage
-    printf "${ERROR}❌ Error: Only one argument is allowed${RESET}\n"
+    printf "${ERROR}${ERROR_EMOJI} Error: Only one argument is allowed${RESET}\n"
     exit 1
 fi
 

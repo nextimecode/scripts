@@ -1,6 +1,6 @@
 set -e
 
-source /Users/pedroduarte/Dev/scripts/constants.sh
+source /Users/pedroduarte/dev/scripts/constants.sh
 
 echo "\n${ERROR}Removendo diretórios de distribuição antigos e caches...${RESET}"
 rm -rf dist

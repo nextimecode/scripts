@@ -1,7 +1,7 @@
 #!/bin/sh
 
 # Import the constants
-source /Users/pedroduarte/Dev/scripts/constants.sh
+source /Users/pedroduarte/dev/scripts/constants.sh
 
 # Verifica se um argumento foi passado
 if [ "$#" -ne 1 ]; then
@@ -10,7 +10,7 @@ if [ "$#" -ne 1 ]; then
 fi
 
 PROJETO=$1
-BASE_DIR="/Users/pedroduarte/Dev"
+BASE_DIR="/Users/pedroduarte/dev"
 QC_DIR="$BASE_DIR/qc"
 CLIENTS="$BASE_DIR/clientes"
 TEMPLATES="$BASE_DIR/templates"

@@ -40,7 +40,7 @@ export STORE_PATH=$(pnpm store path --silent)
 export NPM_TOKEN="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"
 
 # my scripts
-SCRIPTS_PATH="/Users/pedroduarte/Dev/scripts"
+SCRIPTS_PATH="/Users/pedroduarte/dev/scripts"
 
 #programs
 alias jira="$SCRIPTS_PATH/jira.sh"
@@ -112,9 +112,13 @@ alias skaldic="$PROJECTS_QC_PATH/skaldic.sh"
 alias skaldicn="$PROJECTS_QC_PATH/skaldic_next.sh"
 alias skaldic-next="$PROJECTS_QC_PATH/skaldic_next.sh"
 alias sleipnir="$PROJECTS_QC_PATH/sleipnir.sh"
+alias fenrir="$PROJECTS_QC_PATH/fenrir.sh"
+
+## odin
 alias odin="$PROJECTS_QC_PATH/odin/odin.sh"
 alias odinb="$PROJECTS_QC_PATH/odin/odinb.sh"
 alias odinf="$PROJECTS_QC_PATH/odin/odinf.sh"
+
 
 # ruby for odin
 export PATH="$PATH:$HOME/.rvm/bin"
@@ -146,5 +150,5 @@ SPACESHIP_CHAR_SUFFIX=" "
 
 # utils
 
-~/Dev/scripts/projects/utils/bootstrap.sh
+~/dev/scripts/projects/utils/bootstrap.sh
 

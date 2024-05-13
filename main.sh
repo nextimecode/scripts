@@ -1,5 +1,5 @@
 # Import the constants
-source /Users/pedroduarte/Dev/scripts/constants.sh
+source /Users/pedroduarte/dev/scripts/constants.sh
 
 echo "${INFO}Executing git checkout main${RESET}"
   git checkout main
