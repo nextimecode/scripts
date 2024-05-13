@@ -1,4 +1,4 @@
-cd /dev/
+#!/bin/sh
 
 # Import the constants
 source /Users/pedroduarte/dev/scripts/constants.sh
@@ -42,5 +42,9 @@ fi
   printf "${BRIGHT_GREEN}%s${RESET}\n\n" "$RANDOM_MESSAGE"
 fi
 
+cd /dev || {
+  echo "Falha ao mudar para o diretório /dev"
+  exit 1
+}
 
 

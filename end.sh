@@ -52,4 +52,4 @@ git push $NO_VERIFY && { printf "${SUCCESS}\n✅ Congratulations, Pedro! Changes
   END_TIME=$(date +%s)
   ELAPSED_TIME=$((END_TIME - START_TIME))
 
-printf "${INFO}Time taken: ${ELAPSED_TIME} seconds.${RESET}\n"
+printf "${INFO}Time taken: ${ELAPSED_TIME} seconds.${RESET}\n\n"
