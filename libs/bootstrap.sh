@@ -17,6 +17,11 @@ MESSAGES=(
   "Olá, Pedro! Pronto para desafiar os limites do desenvolvimento Front-End hoje?"
 )
 
+# Função para verificar a presença de um comando
+command_exists() {
+  command -v "$1" >/dev/null 2>&1
+}
+
 # Obtém a versão LTS mais recente do Node.js
 latest_lts_version=$(curl -s https://nodejs.org/dist/index.json | jq -r '[.[] | select(.lts != false)] | .[0].version')
 
@@ -27,14 +32,22 @@ if [ "$latest_lts_version" != "$current_version" ]; then
   printf "${INFO}Sua versão atual é: ${RESET}$current_version\n"
   printf "${INFO}Considere atualizar usando: ${RESET}nvm install --lts\n\n"
 fi
-  # Verificação da versão do pnpm
-  latest_pnpm_version=$(curl -s https://registry.npmjs.org/pnpm/latest | jq -r '.version')
-  current_pnpm_version=$(pnpm -v)
-  if [ "$latest_pnpm_version" != "$current_pnpm_version" ]; then
-    printf "\n${WARNING_EMOJI}${WARNING} Existe uma nova versão do pnpm disponível: $latest_pnpm_version${RESET}\n"
-    printf "${INFO}Sua versão atual é: ${RESET}$current_pnpm_version\n"
-    printf "${INFO}Considere atualizar usando: ${RESET}npm install -g pnpm@latest\n\n"
-  else
+
+# Verificação da presença do pnpm
+if ! command_exists pnpm; then
+  printf "\n${WARNING_EMOJI}${WARNING} pnpm não está instalado.${RESET}\n"
+  printf "${INFO}Para instalar, use: ${RESET}npm install -g pnpm\n\n"
+  exit 1
+fi
+
+# Verificação da versão do pnpm
+latest_pnpm_version=$(curl -s https://registry.npmjs.org/pnpm/latest | jq -r '.version')
+current_pnpm_version=$(pnpm -v)
+if [ "$latest_pnpm_version" != "$current_pnpm_version" ]; then
+  printf "\n${WARNING_EMOJI}${WARNING} Existe uma nova versão do pnpm disponível: $latest_pnpm_version${RESET}\n"
+  printf "${INFO}Sua versão atual é: ${RESET}$current_pnpm_version\n"
+  printf "${INFO}Considere atualizar usando: ${RESET}npm install -g pnpm@latest\n\n"
+else
   # Seleciona uma mensagem aleatória
   RANDOM_MESSAGE=${MESSAGES[$RANDOM % ${#MESSAGES[@]}]}
 
@@ -46,5 +59,3 @@ cd /dev || {
   echo "Falha ao mudar para o diretório /dev"
   exit 1
 }
-
-
