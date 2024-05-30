@@ -12,4 +12,4 @@ fi
 CONTROLLER_NAME=$1
 
 echo "\n${INFO}Executing nest g co ${CONTROLLER_NAME}, create controller${RESET}"
-nest g co $CONTROLLER_NAME
+nest g co controllers/$CONTROLLER_NAME
