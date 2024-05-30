@@ -82,6 +82,10 @@ alias ibd="i && b && pnpm dev"
 alias t="pnpm typecheck"
 alias main="$SCRIPTS_PATH/main.sh"
 
+# libs 
+alias studio="$SCRIPTS_PATH/libs/studio.sh"
+alias co="$SCRIPTS_PATH/libs/nest.sh"
+
 # git aliases
 alias pull="git pull"
 alias push="git push"
@@ -119,7 +123,6 @@ alias odin="$PROJECTS_QC_PATH/odin/odin.sh"
 alias odinb="$PROJECTS_QC_PATH/odin/odinb.sh"
 alias odinf="$PROJECTS_QC_PATH/odin/odinf.sh"
 
-
 # ruby for odin
 export PATH="$PATH:$HOME/.rvm/bin"
 [[ -s "$HOME/.rvm/scripts/rvm" ]] && . "$HOME/.rvm/scripts/rvm" 
@@ -127,8 +130,6 @@ export PATH="$PATH:$HOME/.rvm/bin"
 export LDFLAGS="-L/opt/homebrew/opt/openssl@3/lib"
 export CPPFLAGS="-I/opt/homebrew/opt/openssl@3/include"
 export LIBRARY_PATH=$LIBRARY_PATH:$(brew --prefix zstd)/lib/
-
-PATH=~/.console-ninja/.bin:$PATH
 
 SPACESHIP_PROMPT_ORDER=(
   user          # Username section
@@ -148,7 +149,11 @@ SPACESHIP_PROMPT_ADD_NEWLINE=false
 SPACESHIP_CHAR_SYMBOL="❯"
 SPACESHIP_CHAR_SUFFIX=" "
 
-# utils
+# libs
 
-~/dev/scripts/projects/utils/bootstrap.sh
+alias data="$SCRIPTS_PATH/libs/data_pull.sh"
 
+~/dev/scripts/libs/bootstrap.sh
+
+
+PATH=~/.console-ninja/.bin:$PATH
