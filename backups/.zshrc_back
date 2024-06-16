@@ -45,6 +45,7 @@ SCRIPTS_PATH="/Users/pedroduarte/dev/scripts"
 #programs
 alias jira="$SCRIPTS_PATH/jira.sh"
 alias gmail="$SCRIPTS_PATH/programs/gmail.sh"
+alias duo="$SCRIPTS_PATH/programs/duo.sh"
 
 alias end="$SCRIPTS_PATH/end.sh"
 alias help="$SCRIPTS_PATH/help.sh"
@@ -69,20 +70,24 @@ alias endgame="$SCRIPTS_PATH/endgame.sh"
 alias figma="$SCRIPTS_PATH/figma.sh"
 alias up="$SCRIPTS_PATH/update.sh"
 alias update="$SCRIPTS_PATH/update.sh"
-alias build="pnpm build"
-alias b="pnpm build"
+alias main="$SCRIPTS_PATH/main.sh"
+
+# pnpm aliases
 alias i="pnpm i"
+alias b="pnpm build"
+alias build="pnpm build"
 alias clean="pnpm run clean"
 alias lint="pnpm run lint"
 alias audit="pnpm run audit"
+alias tc="pnpm typecheck"
 alias typecheck="pnpm run typecheck"
+alias t="pnpm test"
+alias tw="pnpm test:watch"
 alias go="pnpm run go"
 alias ib="i && b"
 alias ibd="i && b && pnpm dev"
-alias t="pnpm typecheck"
-alias main="$SCRIPTS_PATH/main.sh"
 
-# libs 
+# libs
 alias studio="$SCRIPTS_PATH/libs/studio.sh"
 alias co="$SCRIPTS_PATH/libs/nest.sh"
 
