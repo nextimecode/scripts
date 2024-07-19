@@ -46,7 +46,7 @@ current_pnpm_version=$(pnpm -v)
 if [ "$latest_pnpm_version" != "$current_pnpm_version" ]; then
   printf "\n${WARNING_EMOJI}${WARNING} Existe uma nova versão do pnpm disponível: $latest_pnpm_version${RESET}\n"
   printf "${INFO}Sua versão atual é: ${RESET}$current_pnpm_version\n"
-  printf "${INFO}Considere atualizar usando: ${RESET}npm install -g pnpm@latest\n\n"
+  printf "${INFO}Considere atualizar usando: ${RESET}pnpm add -g pnpm\n\n"
 else
   # Seleciona uma mensagem aleatória
   RANDOM_MESSAGE=${MESSAGES[$RANDOM % ${#MESSAGES[@]}]}

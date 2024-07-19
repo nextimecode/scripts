@@ -1,3 +1,5 @@
+# Amazon Q pre block. Keep at the top of this file.
+[[ -f "${HOME}/Library/Application Support/amazon-q/shell/zshrc.pre.zsh" ]] && builtin source "${HOME}/Library/Application Support/amazon-q/shell/zshrc.pre.zsh"
 export ZSH="$HOME/.oh-my-zsh"
 ZSH_THEME="spaceship"
 plugins=(git)
@@ -81,8 +83,10 @@ alias lint="pnpm run lint"
 alias audit="pnpm run audit"
 alias tc="pnpm typecheck"
 alias typecheck="pnpm run typecheck"
+alias test="pnpm test"
 alias t="pnpm test"
 alias tw="pnpm test:watch"
+alias e2e="pnpm e2e"
 alias go="pnpm run go"
 alias ib="i && b"
 alias ibd="i && b && pnpm dev"
@@ -162,3 +166,13 @@ alias data="$SCRIPTS_PATH/libs/data_pull.sh"
 
 
 PATH=~/.console-ninja/.bin:$PATH
+
+# Amazon Q post block. Keep at the bottom of this file.
+[[ -f "${HOME}/Library/Application Support/amazon-q/shell/zshrc.post.zsh" ]] && builtin source "${HOME}/Library/Application Support/amazon-q/shell/zshrc.post.zsh"
+
+# docker
+
+# Add Visual Studio Code (code)
+export PATH="$PATH:/Applications/Visual Studio Code.app/Contents/Resources/app/bin"
+# Add Docker Desktop for Mac (docker)
+export PATH="$PATH:/Applications/Docker.app/Contents/Resources/bin/"
