@@ -17,6 +17,9 @@ MESSAGES=(
   "Olá, Pedro! Pronto para desafiar os limites do desenvolvimento Front-End hoje?"
 )
 
+# Agenda o script daily.sh para ser executado todos os dias às 10:00
+(crontab -l 2>/dev/null; echo "0 10 * * * /bin/sh /Users/pedroduarte/dev/scripts/programs/daily.sh") | crontab -
+
 # Função para verificar a presença de um comando
 command_exists() {
   command -v "$1" >/dev/null 2>&1

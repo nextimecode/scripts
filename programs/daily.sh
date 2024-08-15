@@ -3,8 +3,8 @@
 # Import the constants
 source /Users/pedroduarte/dev/scripts/constants.sh
 
-echo "${INFO}Opening the JIRA...${RESET}"
-open "/Users/pedroduarte/Applications/jira.app"
+echo "${INFO}Opening the Daily...${RESET}"
+open "/Users/pedroduarte/Applications/Daily.app"
 
 sleep 1
 
