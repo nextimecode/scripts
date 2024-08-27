@@ -38,7 +38,7 @@ MESSAGES=(
 )
 
 # Agenda o script daily.sh para ser executado todos os dias às 10:00
-(crontab -l 2>/dev/null; echo "0 10 * * * /bin/sh /Users/pedroduarte/dev/scripts/programs/daily.sh") | crontab -
+# (crontab -l 2>/dev/null; echo "0 10 * * * /bin/sh /Users/pedroduarte/dev/scripts/programs/daily.sh") | crontab -
 
 # Função para verificar a presença de um comando
 command_exists() {
