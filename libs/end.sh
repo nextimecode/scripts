@@ -11,7 +11,7 @@ diff_output=$(git diff | jq -R -s .)
 export $(grep -v '^#' /Users/pedroduarte/dev/scripts/.env | xargs)
 
 if [ -z "$1" ]; then
-  printf "\n${ERROR}No commit message provided. Generating one using git diff...${RESET}\n"
+  printf "\n${ERROR}${IA_EMOJI} No commit message provided. Generating one using git diff...${RESET}\n"
 
   response=$(curl -s https://api.openai.com/v1/chat/completions \
     -H "Content-Type: application/json" \
