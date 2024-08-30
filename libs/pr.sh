@@ -30,7 +30,7 @@ fi
 PROJETO=$1
 
 # List of qcx projects
-QCX_PROJECTS=("artemis" "kori" "kratos" "olimpo" "sleipnir" "odin" "finn")
+QCX_PROJECTS=("artemis" "kori" "kratos" "olimpo" "sleipnir" "odin" "finn" "niamh")
 
 # Determine if the project is a qcx project
 IS_QCX_PROJECT=false

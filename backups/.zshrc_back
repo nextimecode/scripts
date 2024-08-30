@@ -50,13 +50,15 @@ alias jira="$SCRIPTS_PATH/programs/jira.sh"
 alias gmail="$SCRIPTS_PATH/programs/gmail.sh"
 alias duo="$SCRIPTS_PATH/programs/duo.sh"
 
-alias end="$SCRIPTS_PATH/end.sh"
+#libs
+alias end="$SCRIPTS_PATH/libs/end.sh"
+alias pr="$SCRIPTS_PATH/libs/pr.sh"
+
 alias help="$SCRIPTS_PATH/help.sh"
 alias h="$SCRIPTS_PATH/help.sh"
 alias display="$SCRIPTS_PATH/display.sh"
 
 alias insta="$SCRIPTS_PATH/insta.sh"
-alias pr="$SCRIPTS_PATH/pr.sh"
 alias meet="$SCRIPTS_PATH/meet.sh"
 alias nextjs="$SCRIPTS_PATH/nextjs.sh"
 alias vs="$SCRIPTS_PATH/vs.sh"
