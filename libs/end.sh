@@ -34,7 +34,7 @@ if [ -z "$1" ]; then
       exit 1
     fi
   else
-    printf "\n${SUCCESS}Generated commit message:${RESET} ${commit_message}${RESET}\n"
+    printf "\n${WARNING}${IA_EMOJI} Generated commit message:${RESET} ${commit_message}${RESET}\n"
   fi
 else
   commit_message="$1"
