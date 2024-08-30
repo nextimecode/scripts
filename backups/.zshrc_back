@@ -53,6 +53,8 @@ alias duo="$SCRIPTS_PATH/programs/duo.sh"
 #libs
 alias end="$SCRIPTS_PATH/libs/end.sh"
 alias pr="$SCRIPTS_PATH/libs/pr.sh"
+alias studio="$SCRIPTS_PATH/libs/studio.sh"
+alias co="$SCRIPTS_PATH/libs/nest.sh"
 
 alias help="$SCRIPTS_PATH/help.sh"
 alias h="$SCRIPTS_PATH/help.sh"
@@ -94,14 +96,13 @@ alias go="pnpm run go"
 alias ib="i && b"
 alias ibd="i && b && pnpm dev"
 
-# libs
-alias studio="$SCRIPTS_PATH/libs/studio.sh"
-alias co="$SCRIPTS_PATH/libs/nest.sh"
-
 # git aliases
 alias pull="git pull"
 alias push="git push"
 alias status="git status"
+
+#git hub aliases
+alias browse="gh browse"
 
 # my projects
 
