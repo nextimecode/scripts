@@ -87,4 +87,29 @@ git push $NO_VERIFY && { printf "${SUCCESS}\n✅ Congratulations, Pedro! Changes
 
 printf "${INFO}Time taken: ${ELAPSED_TIME} seconds.${RESET}\n\n"
 
-source /Users/pedroduarte/dev/scripts/libs/pr.sh
+# Open the Pull Request page --------------------------------
+
+# Check the number of arguments provided
+if [ "$#" -eq 0 ]; then
+    # Attempt to open the current branch's PR in the web browser using the GitHub CLI
+    printf "${INFO}Opening the current Pull Request in the web browser...${RESET}\n"
+    # Capture the output and exit code of `gh pr view --web`
+    output=$(gh pr view --web 2>&1)
+    exit_code=$?
+
+    # Check if the command was successful
+    if [ $exit_code -ne 0 ]; then
+        printf "\n${ERROR}${ERROR_EMOJI} Error: $output${RESET}\n"
+        # If no PR was found, try to create one
+        if echo "$output" | grep -q "no pull requests found"; then
+            gh pr create && gh pr view --web
+        fi
+    fi
+    exit 0
+elif [ "$#" -ne 1 ]; then
+    # Error message if more than one argument or incorrect usage
+    printf "${ERROR}${ERROR_EMOJI} Error: Only one argument is allowed${RESET}\n"
+    exit 1
+fi
+
+
