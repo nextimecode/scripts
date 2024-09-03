@@ -94,7 +94,7 @@ if [ "$#" -eq 0 ]; then
     # Attempt to open the current branch's PR in the web browser using the GitHub CLI
     printf "${INFO}Opening the current Pull Request in the web browser...${RESET}\n"
     # Capture the output and exit code of `gh pr view --web`
-    output=$(gh pr view --web 2>&1)
+    output=$(gh pr view 2>&1)
     exit_code=$?
 
     # Check if the command was successful
