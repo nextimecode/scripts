@@ -100,7 +100,7 @@ if [ "$#" -eq 0 ]; then
     # Check if the command was successful
     if [ $exit_code -eq 0 ]; then
         # If the PR was found and the view command was successful
-        printf "${INFO}There is already an open Pull Request for the current branch${RESET}\n\n"
+        printf "There is already an open Pull Request for the current branch${RESET}\n\n"
     else
         printf "\n${ERROR}${ERROR_EMOJI} Error: $output${RESET}\n"
         # If no PR was found, try to create one
