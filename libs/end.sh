@@ -92,7 +92,7 @@ printf "${INFO}Time taken: ${ELAPSED_TIME} seconds.${RESET}\n\n"
 # Check the number of arguments provided
 if [ "$#" -eq 0 ]; then
     # Attempt to open the current branch's PR in the web browser using the GitHub CLI
-    printf "${INFO}Opening the current Pull Request in the web browser...${RESET}\n"
+    printf "${INFO}Checking if there is an open Pull Request for the current branch...${RESET}\n"
     # Capture the output and exit code of `gh pr view --web`
     output=$(gh pr view 2>&1)
     exit_code=$?
