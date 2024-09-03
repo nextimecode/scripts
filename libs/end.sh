@@ -94,11 +94,14 @@ if [ "$#" -eq 0 ]; then
     # Attempt to open the current branch's PR in the web browser using the GitHub CLI
     printf "${INFO}Checking if there is an open Pull Request for the current branch...${RESET}\n"
     # Capture the output and exit code of `gh pr view --web`
-    output=$(gh pr view 2>&1)
+    output=$(gh pr view --web 2>&1)
     exit_code=$?
 
     # Check if the command was successful
-    if [ $exit_code -ne 0 ]; then
+    if [ $exit_code -eq 0 ]; then
+        # If the PR was found and the view command was successful
+        printf "${INFO}There is already an open Pull Request for the current branch. Opening it in your browser...${RESET}\n"
+    else
         printf "\n${ERROR}${ERROR_EMOJI} Error: $output${RESET}\n"
         # If no PR was found, try to create one
         if echo "$output" | grep -q "no pull requests found"; then
@@ -111,5 +114,6 @@ elif [ "$#" -ne 1 ]; then
     printf "${ERROR}${ERROR_EMOJI} Error: Only one argument is allowed${RESET}\n"
     exit 1
 fi
+
 
 
