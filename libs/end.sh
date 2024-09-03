@@ -62,7 +62,7 @@ if [ -n "$(git diff)" ]; then
   printf "${WARNING}${WARNING_EMOJI} Warning: There are unstaged changes.${RESET}\n"
   exit 1
 else
-  printf "${SUCCESS}No unstaged changes.${RESET}\n"
+  printf "No unstaged changes.${RESET}\n"
 fi
 
 printf "\n${INFO}Executing the git commit command${RESET}\n"
@@ -74,7 +74,7 @@ if [ -n "$(git diff --staged)" ]; then
   printf "${WARNING}${WARNING_EMOJI} Warning: There are uncommitted changes.${RESET}\n"
   exit 1
 else
-  printf "${SUCCESS}No uncommitted changes.${RESET}\n"
+  printf "No uncommitted changes.${RESET}\n"
 fi
 
 printf "\n${INFO}Executing the git push command${RESET}\n\n"
@@ -85,7 +85,7 @@ git push $NO_VERIFY && { printf "${SUCCESS}\n✅ Congratulations, Pedro! Changes
   END_TIME=$(date +%s)
   ELAPSED_TIME=$((END_TIME - START_TIME))
 
-printf "${INFO}Time taken: ${ELAPSED_TIME} seconds.${RESET}\n\n"
+printf "${INFO}Time taken:${RESET} ${ELAPSED_TIME} seconds.${RESET}\n\n"
 
 # Open the Pull Request page --------------------------------
 
