@@ -136,6 +136,9 @@ alias odin="$PROJECTS_QC_PATH/odin/odin.sh"
 alias odinb="$PROJECTS_QC_PATH/odin/odinb.sh"
 alias odinf="$PROJECTS_QC_PATH/odin/odinf.sh"
 
+## niamh
+alias niamh="npm run dev"
+
 # ruby for odin
 export PATH="$PATH:$HOME/.rvm/bin"
 [[ -s "$HOME/.rvm/scripts/rvm" ]] && . "$HOME/.rvm/scripts/rvm" 
