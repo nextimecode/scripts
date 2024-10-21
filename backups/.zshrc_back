@@ -29,11 +29,11 @@ zinit light zdharma/fast-syntax-highlighting
 zinit light zsh-users/zsh-autosuggestions
 zinit light zsh-users/zsh-completions
 # pnpm
-export PNPM_HOME="/Users/pedroduarte/Library/pnpm"
-case ":$PATH:" in
-  *":$PNPM_HOME:"*) ;;
-  *) export PATH="$PNPM_HOME:$PATH" ;;
-esac
+# export PNPM_HOME="/Users/pedroduarte/Library/pnpm"
+# case ":$PATH:" in
+#   *":$PNPM_HOME:"*) ;;
+#   *) export PATH="$PNPM_HOME:$PATH" ;;
+# esac
 
 export STORE_PATH=$(pnpm store path --silent)
 
@@ -184,3 +184,13 @@ PATH=~/.console-ninja/.bin:$PATH
 export PATH="$PATH:/Applications/Visual Studio Code.app/Contents/Resources/app/bin"
 # Add Docker Desktop for Mac (docker)
 export PATH="$PATH:/Applications/Docker.app/Contents/Resources/bin/"
+export PATH="/opt/homebrew/opt/mysql@8.0/bin:$PATH"
+
+# Carrega o NVM manualmente
+export NVM_DIR="$([ -z "${XDG_CONFIG_HOME-}" ] && printf %s "${HOME}/.nvm" || printf %s "${XDG_CONFIG_HOME}/nvm")"
+[ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh" # Isso carrega o nvm
+
+# Se o diretório atual for o projeto desejado, usa o Node 18
+if [ "$(pwd)" = "/Users/pedroduarte/dev/qc/odin" ]; then
+  nvm use 18
+fi
