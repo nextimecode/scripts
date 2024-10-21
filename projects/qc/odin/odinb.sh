@@ -14,5 +14,5 @@ echo "\n${INFO}Executing bundle install${RESET}"
   bundle install
 echo "\n${INFO}Executing pnpm build${RESET}"
   pnpm build
-echo "\n${INFO}Executing bundle exec rails s -p 3001${RESET}"
-  bundle exec rails s -p 3001
+echo "\n${INFO}Executing bundle exec rails s -p 3000${RESET}"
+  bundle exec rails s -p 3000
