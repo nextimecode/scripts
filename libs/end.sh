@@ -105,7 +105,7 @@ if [ "$#" -eq 0 ]; then
         printf "\n${ERROR}${ERROR_EMOJI} Error: $output${RESET}\n"
         # If no PR was found, try to create one
         if echo "$output" | grep -q "no pull requests found"; then
-            gh pr create && gh pr view --web
+          gh pr create --assignee @me && gh pr view --web
         fi
     fi
     exit 0
