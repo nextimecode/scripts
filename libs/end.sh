@@ -28,11 +28,13 @@ if [ -z "$1" ]; then
 
   if [ -z "$commit_message" ]; then
     printf "\n${ERROR}❌ Error: Failed to generate a commit message automatically.${RESET}\n"
-    read -p "Please enter a commit message: " commit_message
-    if [ -z "$commit_message" ]; then
-      printf "\n${ERROR}❌ Error: Commit message is still missing. Exiting.${RESET}\n"
-      exit 1
-    fi
+
+    while [ -z "$commit_message" ]; do
+      read -p "${WARNING}${WARNING_EMOJI} Please enter a commit message: " commit_message
+      if [ -z "$commit_message" ]; then
+        printf "\n${WARNING}${WARNING_EMOJI} Commit message cannot be empty. Please provide a valid message.${RESET}\n"
+      fi
+    done
   else
     printf "\n${WARNING}${IA_EMOJI} Generated commit message:${RESET} ${commit_message}${RESET}\n"
   fi
