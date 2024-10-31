@@ -15,7 +15,7 @@ if [ -z "$1" ]; then
 
   response=$(curl -s https://api.openai.com/v1/chat/completions \
     -H "Content-Type: application/json" \
-    -H "Authorization: Bearer $OPENAI_API_KEY" \
+    -H "Authorization: Bearer $Q_API_KEY" \
     -d '{
       "model": "gpt-4o-mini",
       "messages": [
@@ -24,14 +24,16 @@ if [ -z "$1" ]; then
       ]
     }')
 
+  echo "$response"
+
   commit_message=$(echo "$response" | jq -r '.choices[0].message.content')
 
-  if [ -z "$commit_message" ]; then
+  if [ -z "$commit_message" ] || [ "$commit_message" = "null" ]; then
     printf "\n${ERROR}❌ Error: Failed to generate a commit message automatically.${RESET}\n"
 
-    while [ -z "$commit_message" ]; do
-      read -p "${WARNING}${WARNING_EMOJI} Please enter a commit message: " commit_message
-      if [ -z "$commit_message" ]; then
+    while [ -z "$commit_message" ] || [ "$commit_message" = "null" ]; do
+      read -p "${WARNING_EMOJI} Please enter a commit message: " commit_message
+      if [ -z "$commit_message" ] || [ "$commit_message" = "null" ]; then
         printf "\n${WARNING}${WARNING_EMOJI} Commit message cannot be empty. Please provide a valid message.${RESET}\n"
       fi
     done
