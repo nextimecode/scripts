@@ -26,7 +26,7 @@ fi
 # Verificação da presença do pnpm
 if ! command_exists pnpm; then
   printf "\n${WARNING_EMOJI}${WARNING} pnpm não está instalado.${RESET}\n"
-  printf "${INFO}Para instalar, use: ${RESET}pnpm add -g pnpm\n\n"
+  printf "${INFO}Para instalar, use: ${RESET}npm install -g pnpm\n\n"
   exit 1
 fi
 
