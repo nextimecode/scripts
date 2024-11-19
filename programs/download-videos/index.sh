@@ -20,12 +20,17 @@ while true; do
   fi
 
   # Solicita o nome do arquivo de saída ao usuário
-  echo "${BRIGHT_GREEN}Por favor, forneça o nome do arquivo de saída (ou pressione Enter para usar o padrão): ${RESET}"
+  echo "${INFO}Por favor, forneça o nome do arquivo de saída (ou pressione Enter para usar o padrão): ${RESET}"
   read -p "" OUTPUT_FILE
 
   # Define o nome do arquivo de saída padrão caso o usuário não forneça um
   if [ -z "$OUTPUT_FILE" ]; then
     OUTPUT_FILE="video_$(date +%Y%m%d%H%M%S).mp4"
+  else
+    # Garante que o nome tenha a extensão .mp4
+    if [[ "$OUTPUT_FILE" != *.mp4 ]]; then
+      OUTPUT_FILE="${OUTPUT_FILE}.mp4"
+    fi
   fi
 
   # Executa o comando ffmpeg com o link fornecido

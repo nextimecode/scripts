@@ -3,7 +3,6 @@
 # Import the constants
 source /Users/pedroduarte/dev/scripts/constants.sh
 
-
 # Mensagens de Eru Ilúvatar
 source /Users/pedroduarte/dev/scripts/libs/messages.sh
 
@@ -36,7 +35,7 @@ current_pnpm_version=$(pnpm -v)
 if [ "$latest_pnpm_version" != "$current_pnpm_version" ]; then
   printf "\n${WARNING_EMOJI}${WARNING} Existe uma nova versão do pnpm disponível: $latest_pnpm_version${RESET}\n"
   printf "${INFO}Sua versão atual é: ${RESET}$current_pnpm_version\n"
-  printf "${INFO}Considere atualizar usando: ${RESET}pnpm add -g pnpm\n\n"
+  printf "${INFO}Considere atualizar usando: ${RESET}npm install -g pnpm\n\n"
 else
   # Escolhe uma mensagem aleatória
   RANDOM_MESSAGE="${MESSAGES[$RANDOM % ${#MESSAGES[@]}]}"
@@ -46,7 +45,7 @@ else
   ENGLISH_MESSAGE=$(echo "$RANDOM_MESSAGE" | sed -n '2p')
 
   # Imprime as mensagens em suas respectivas cores
-  printf "\n${BRIGHT_GREEN}${IA_EMOJI} %s${RESET}\n" "$PORTUGUESE_MESSAGE"
+  printf "${BRIGHT_GREEN}${IA_EMOJI} %s${RESET}\n" "$PORTUGUESE_MESSAGE"
   printf "${CYAN} %s${RESET}\n\n" "$ENGLISH_MESSAGE"
 fi
 

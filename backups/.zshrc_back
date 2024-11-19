@@ -1,20 +1,37 @@
+# nvm
+export NVM_DIR="$HOME/.nvm"
+[ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh" # Carrega o nvm
+[ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion" # Carrega o bash_completion para nvm
+
 # Amazon Q pre block. Keep at the top of this file.
 [[ -f "${HOME}/Library/Application Support/amazon-q/shell/zshrc.pre.zsh" ]] && builtin source "${HOME}/Library/Application Support/amazon-q/shell/zshrc.pre.zsh"
+
+export PATH="$PATH:$HOME/.npm-global/bin"
+export PATH="$PATH:$(npm bin -g)"
+
 export ZSH="$HOME/.oh-my-zsh"
 ZSH_THEME="spaceship"
 plugins=(git)
 source $ZSH/oh-my-zsh.sh
-export PATH=/opt/homebrew/bin:$PATH
-export LDFLAGS="-L/opt/homebrew/opt/openssl@1.1/lib"
-export CPPFLAGS="-I/opt/homebrew/opt/openssl@1.1/include"
+
+# Carrega zsh-syntax-highlighting
+source /Users/pedroduarte/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
+
+# Configuração do PATH
+export PATH="/opt/homebrew/bin:/Applications/Visual Studio Code.app/Contents/Resources/app/bin:/Applications/Docker.app/Contents/Resources/bin:/opt/homebrew/opt/mysql@8.0/bin:$PATH"
+
+# Configuração adicional para OpenSSL
+export LDFLAGS="-L/opt/homebrew/opt/openssl@1.1/lib -L/opt/homebrew/opt/openssl@3/lib"
+export CPPFLAGS="-I/opt/homebrew/opt/openssl@1.1/include -I/opt/homebrew/opt/openssl@3/include"
 export PKG_CONFIG_PATH="/opt/homebrew/opt/openssl@1.1/lib/pkgconfig"
+export LIBRARY_PATH=$LIBRARY_PATH:$(brew --prefix zstd)/lib/
+
+# Corrige conflitos de compilação
 export RUBY_CFLAGS=-DUSE_FFI_CLOSURE_ALLOC
-export PATH="$(brew --prefix)/opt/openssl@1.1/bin:$PATH"
 export optflags="-Wno-error=implicit-function-declaration"
 export OBJC_DISABLE_INITIALIZE_FORK_SAFETY=YES
-export NVM_DIR=~/.nvm
-source $(brew --prefix nvm)/nvm.sh
-source /Users/pedroduarte/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
+
+# Carrega o Zinit (plugin manager)
 if [[ ! -f $HOME/.local/share/zinit/zinit.git/zinit.zsh ]]; then
     print -P "%F{33} %F{220}Installing %F{33}ZDHARMA-CONTINUUM%F{220} Initiative Plugin Manager (%F{33}zdharma-continuum/zinit%F{220})…%f"
     command mkdir -p "$HOME/.local/share/zinit" && command chmod g-rwX "$HOME/.local/share/zinit"
@@ -28,125 +45,6 @@ autoload -Uz _zinit
 zinit light zdharma/fast-syntax-highlighting
 zinit light zsh-users/zsh-autosuggestions
 zinit light zsh-users/zsh-completions
-# pnpm
-# export PNPM_HOME="/Users/pedroduarte/Library/pnpm"
-# case ":$PATH:" in
-#   *":$PNPM_HOME:"*) ;;
-#   *) export PATH="$PNPM_HOME:$PATH" ;;
-# esac
-
-export STORE_PATH=$(pnpm store path --silent)
-
-# pnpm end
-
-export NPM_TOKEN="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"
-
-# my scripts
-SCRIPTS_PATH="/Users/pedroduarte/dev/scripts"
-
-#programs
-alias daily="$SCRIPTS_PATH/programs/daily.sh"
-alias jira="$SCRIPTS_PATH/programs/jira.sh"
-alias gmail="$SCRIPTS_PATH/programs/gmail.sh"
-alias duo="$SCRIPTS_PATH/programs/duo.sh"
-
-#libs
-alias end="$SCRIPTS_PATH/libs/end.sh"
-alias pr="$SCRIPTS_PATH/libs/pr.sh"
-alias studio="$SCRIPTS_PATH/libs/studio.sh"
-alias co="$SCRIPTS_PATH/libs/nest.sh"
-
-alias help="$SCRIPTS_PATH/help.sh"
-alias h="$SCRIPTS_PATH/help.sh"
-alias display="$SCRIPTS_PATH/display.sh"
-
-alias insta="$SCRIPTS_PATH/insta.sh"
-alias meet="$SCRIPTS_PATH/meet.sh"
-alias nextjs="$SCRIPTS_PATH/nextjs.sh"
-alias vs="$SCRIPTS_PATH/vs.sh"
-alias calendar="$SCRIPTS_PATH/calendar.sh"
-alias drive="$SCRIPTS_PATH/drive.sh"
-alias translate="$SCRIPTS_PATH/translate.sh"
-alias github="$SCRIPTS_PATH/github.sh"
-alias slack="$SCRIPTS_PATH/slack.sh"
-alias whats="$SCRIPTS_PATH/whats.sh"
-alias gather="$SCRIPTS_PATH/gather.sh"
-alias close="$SCRIPTS_PATH/close.sh"
-alias dev="$SCRIPTS_PATH/dev.sh"
-alias endgame="$SCRIPTS_PATH/endgame.sh"
-alias figma="$SCRIPTS_PATH/figma.sh"
-alias up="$SCRIPTS_PATH/update.sh"
-alias update="$SCRIPTS_PATH/update.sh"
-alias main="$SCRIPTS_PATH/main.sh"
-
-# pnpm aliases
-alias i="pnpm i"
-alias b="pnpm build"
-alias build="pnpm build"
-alias clean="pnpm run clean"
-alias lint="pnpm run lint"
-alias audit="pnpm run audit"
-alias tc="pnpm typecheck"
-alias typecheck="pnpm run typecheck"
-alias test="pnpm test"
-alias t="pnpm test"
-alias tw="pnpm test:watch"
-alias e2e="pnpm e2e"
-alias go="pnpm run go"
-alias ib="i && b"
-alias ibd="i && b && pnpm dev"
-
-# git aliases
-alias pull="git pull"
-alias push="git push"
-alias status="git status"
-
-#git hub aliases
-alias browse="gh browse"
-
-# my projects
-
-# rohan
-alias dunharrow="$SCRIPTS_PATH/projects/dunharrow.sh"
-alias edoras="$SCRIPTS_PATH/projects/edoras.sh"
-alias westfold="$SCRIPTS_PATH/projects/westfold.sh"
-
-# yavanna
-alias laurelin="$SCRIPTS_PATH/projects/laurelin.sh"
-alias telperion="$SCRIPTS_PATH/projects/telperion.sh"
-
-#aule
-alias angainor="$SCRIPTS_PATH/projects/angainor.sh"
-alias naugrim="$SCRIPTS_PATH/projects/naugrim.sh"
-
-# qc projects
-PROJECTS_QC_PATH="$SCRIPTS_PATH/projects/qc"
-
-alias rkratos="$PROJECTS_QC_PATH/reset_kratos.sh"
-
-alias atreus="$PROJECTS_QC_PATH/atreus.sh"
-alias niamh="$PROJECTS_QC_PATH/niamh.sh"
-alias skaldic="$PROJECTS_QC_PATH/skaldic.sh"
-alias skaldicn="$PROJECTS_QC_PATH/skaldic_next.sh"
-alias skaldic-next="$PROJECTS_QC_PATH/skaldic_next.sh"
-alias sleipnir="$PROJECTS_QC_PATH/sleipnir.sh"
-alias fenrir="$PROJECTS_QC_PATH/fenrir.sh"
-
-## odin
-alias odin="$PROJECTS_QC_PATH/odin/odin.sh"
-alias odinb="$PROJECTS_QC_PATH/odin/odinb.sh"
-alias odinf="$PROJECTS_QC_PATH/odin/odinf.sh"
-
-## niamh
-alias niamh="npm run dev"
-
-# ruby for odin
-export PATH="$PATH:$HOME/.rvm/bin"
-[[ -s "$HOME/.rvm/scripts/rvm" ]] && . "$HOME/.rvm/scripts/rvm" 
-
-export LDFLAGS="-L/opt/homebrew/opt/openssl@3/lib"
-export CPPFLAGS="-I/opt/homebrew/opt/openssl@3/include"
-export LIBRARY_PATH=$LIBRARY_PATH:$(brew --prefix zstd)/lib/
 
 SPACESHIP_PROMPT_ORDER=(
   user          # Username section
@@ -166,31 +64,110 @@ SPACESHIP_PROMPT_ADD_NEWLINE=false
 SPACESHIP_CHAR_SYMBOL="❯"
 SPACESHIP_CHAR_SUFFIX=" "
 
-# libs
-
-alias data="$SCRIPTS_PATH/libs/data_pull.sh"
-
-~/dev/scripts/libs/bootstrap.sh
-
-
-PATH=~/.console-ninja/.bin:$PATH
-
-# Amazon Q post block. Keep at the bottom of this file.
-[[ -f "${HOME}/Library/Application Support/amazon-q/shell/zshrc.post.zsh" ]] && builtin source "${HOME}/Library/Application Support/amazon-q/shell/zshrc.post.zsh"
-
-# docker
-
 # Add Visual Studio Code (code)
 export PATH="$PATH:/Applications/Visual Studio Code.app/Contents/Resources/app/bin"
 # Add Docker Desktop for Mac (docker)
 export PATH="$PATH:/Applications/Docker.app/Contents/Resources/bin/"
 export PATH="/opt/homebrew/opt/mysql@8.0/bin:$PATH"
 
-# Carrega o NVM manualmente
-export NVM_DIR="$([ -z "${XDG_CONFIG_HOME-}" ] && printf %s "${HOME}/.nvm" || printf %s "${XDG_CONFIG_HOME}/nvm")"
-[ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh" # Isso carrega o nvm
+export LDFLAGS="-L/opt/homebrew/opt/openssl@3/lib"
+export CPPFLAGS="-I/opt/homebrew/opt/openssl@3/include"
+export LIBRARY_PATH=$LIBRARY_PATH:$(brew --prefix zstd)/lib/
 
-# Se o diretório atual for o projeto desejado, usa o Node 18
-if [ "$(pwd)" = "/Users/pedroduarte/dev/qc/odin" ]; then
-  nvm use 18
-fi
+# Hook para garantir a versão correta ao mudar de diretório
+autoload -U add-zsh-hook
+add-zsh-hook chpwd use_node_version_for_project
+
+export STORE_PATH=$(pnpm store path --silent)
+
+export NPM_TOKEN="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"
+
+# my scripts
+SCRIPTS_PATH="/Users/pedroduarte/dev/scripts"
+#programs
+alias daily="$SCRIPTS_PATH/programs/daily.sh"
+alias jira="$SCRIPTS_PATH/programs/jira.sh"
+alias gmail="$SCRIPTS_PATH/programs/gmail.sh"
+alias duo="$SCRIPTS_PATH/programs/duo.sh"
+#libs
+alias end="$SCRIPTS_PATH/libs/end.sh"
+alias pr="$SCRIPTS_PATH/libs/pr.sh"
+alias studio="$SCRIPTS_PATH/libs/studio.sh"
+alias co="$SCRIPTS_PATH/libs/nest.sh"
+alias help="$SCRIPTS_PATH/help.sh"
+alias h="$SCRIPTS_PATH/help.sh"
+alias display="$SCRIPTS_PATH/display.sh"
+alias insta="$SCRIPTS_PATH/insta.sh"
+alias meet="$SCRIPTS_PATH/meet.sh"
+alias nextjs="$SCRIPTS_PATH/nextjs.sh"
+alias vs="$SCRIPTS_PATH/vs.sh"
+alias calendar="$SCRIPTS_PATH/calendar.sh"
+alias drive="$SCRIPTS_PATH/drive.sh"
+alias translate="$SCRIPTS_PATH/translate.sh"
+alias github="$SCRIPTS_PATH/github.sh"
+alias slack="$SCRIPTS_PATH/slack.sh"
+alias whats="$SCRIPTS_PATH/whats.sh"
+alias gather="$SCRIPTS_PATH/gather.sh"
+alias close="$SCRIPTS_PATH/close.sh"
+alias dev="$SCRIPTS_PATH/dev.sh"
+alias endgame="$SCRIPTS_PATH/endgame.sh"
+alias figma="$SCRIPTS_PATH/figma.sh"
+alias up="$SCRIPTS_PATH/update.sh"
+alias update="$SCRIPTS_PATH/update.sh"
+alias main="$SCRIPTS_PATH/main.sh"
+# pnpm aliases
+alias i="pnpm i"
+alias b="pnpm build"
+alias build="pnpm build"
+alias clean="pnpm run clean"
+alias lint="pnpm run lint"
+alias audit="pnpm run audit"
+alias tc="pnpm typecheck"
+alias typecheck="pnpm run typecheck"
+alias test="pnpm test"
+alias t="pnpm test"
+alias tw="pnpm test:watch"
+alias e2e="pnpm e2e"
+alias go="pnpm run go"
+alias ib="i && b"
+alias ibd="i && b && pnpm dev"
+# git aliases
+alias pull="git pull"
+alias push="git push"
+alias status="git status"
+#git hub aliases
+alias browse="gh browse"
+# my projects
+# rohan
+alias dunharrow="$SCRIPTS_PATH/projects/dunharrow.sh"
+alias edoras="$SCRIPTS_PATH/projects/edoras.sh"
+alias westfold="$SCRIPTS_PATH/projects/westfold.sh"
+# yavanna
+alias laurelin="$SCRIPTS_PATH/projects/laurelin.sh"
+alias telperion="$SCRIPTS_PATH/projects/telperion.sh"
+#aule
+alias angainor="$SCRIPTS_PATH/projects/angainor.sh"
+alias naugrim="$SCRIPTS_PATH/projects/naugrim.sh"
+# qc projects
+PROJECTS_QC_PATH="$SCRIPTS_PATH/projects/qc"
+alias rkratos="$PROJECTS_QC_PATH/reset_kratos.sh"
+alias atreus="$PROJECTS_QC_PATH/atreus.sh"
+alias niamh="$PROJECTS_QC_PATH/niamh.sh"
+alias skaldic="$PROJECTS_QC_PATH/skaldic.sh"
+alias skaldicn="$PROJECTS_QC_PATH/skaldic_next.sh"
+alias skaldic-next="$PROJECTS_QC_PATH/skaldic_next.sh"
+alias sleipnir="$PROJECTS_QC_PATH/sleipnir.sh"
+alias fenrir="$PROJECTS_QC_PATH/fenrir.sh"
+## odin
+alias odin="$PROJECTS_QC_PATH/odin/odin.sh"
+alias odinb="$PROJECTS_QC_PATH/odin/odinb.sh"
+alias odinf="$PROJECTS_QC_PATH/odin/odinf.sh"
+## niamh
+alias niamh="npm run dev"
+# libs
+alias data="$SCRIPTS_PATH/libs/data_pull.sh"
+
+# Amazon Q post block. Keep at the bottom of this file.
+[[ -f "${HOME}/Library/Application Support/amazon-q/shell/zshrc.post.zsh" ]] && builtin source "${HOME}/Library/Application Support/amazon-q/shell/zshrc.post.zsh"
+
+~/dev/scripts/libs/bootstrap.sh
