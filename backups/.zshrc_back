@@ -171,3 +171,5 @@ alias data="$SCRIPTS_PATH/libs/data_pull.sh"
 [[ -f "${HOME}/Library/Application Support/amazon-q/shell/zshrc.post.zsh" ]] && builtin source "${HOME}/Library/Application Support/amazon-q/shell/zshrc.post.zsh"
 
 ~/dev/scripts/libs/bootstrap.sh
+
+PATH=~/.console-ninja/.bin:$PATH
