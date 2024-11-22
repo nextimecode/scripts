@@ -2,51 +2,7 @@
 
 source /Users/pedroduarte/dev/scripts/constants.sh
 
-TITLES=(
-  "81- Armazenando o Refresh Token"
-  "82- Colocando requisições na fila"
-  "83- Buscando novo token"
-  "84- Reenviando a requisição"
-  "85- Loading no carregamento do histórico"
-  "86- Variações de Refresh Token"
-  "87- Encerramento do módulo"
-)
-
-LINKS=(
-  "https://b-vz-762f4670-e04.tv.pandavideo.com.br/21772034-ea57-49dc-bdd6-0ce11844f5f4/playlist.m3u8"
-  "https://b-vz-762f4670-e04.tv.pandavideo.com.br/58cf17a5-0d39-4d6e-a22a-24446dfaf934/playlist.m3u8"
-  "https://b-vz-762f4670-e04.tv.pandavideo.com.br/d8337a0d-ce8d-47c3-aed5-1e28eb283d49/playlist.m3u8"
-  "https://b-vz-762f4670-e04.tv.pandavideo.com.br/4a4521af-3fa3-45a7-8b59-c314f0c8beb7/playlist.m3u8"
-  "https://b-vz-762f4670-e04.tv.pandavideo.com.br/77725146-b5fc-4a08-b6ad-726c1fc84f0e/playlist.m3u8"
-  "https://b-vz-762f4670-e04.tv.pandavideo.com.br/6b983af2-b6bd-4e09-a2d4-55f7a01d1ae6/playlist.m3u8"
-  "https://b-vz-762f4670-e04.tv.pandavideo.com.br/8057358f-b55a-489c-92b5-23978ea9618b/playlist.m3u8"
-)
-
-# TITLES=(
-#   "1-"
-#   "2-"
-#   "3-"
-#   "4-"
-#   "5-"
-#   "6-"
-#   "7-"
-#   "8-"
-#   "9-"
-#   "10-"
-# )
-
-# LINKS=(
-#   ""
-#   ""
-#   ""
-#   ""
-#   ""
-#   ""
-#   ""
-#   ""
-#   ""
-#   ""
-# )
+source /Users/pedroduarte/dev/scripts/programs/download-videos/items.sh
 
 for i in "${!TITLES[@]}"; do
   TITLE="${TITLES[$i]}"
