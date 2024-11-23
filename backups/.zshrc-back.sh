@@ -138,6 +138,10 @@ alias status="git status"
 #git hub aliases
 alias browse="gh browse"
 # my projects
+# stark
+alias arya="$SCRIPTS_PATH/projects/stark/arya.sh"
+alias bran="$SCRIPTS_PATH/projects/stark/bran.sh"
+alias sansa="$SCRIPTS_PATH/projects/stark/sansa.sh"
 # rohan
 alias dunharrow="$SCRIPTS_PATH/projects/dunharrow.sh"
 alias edoras="$SCRIPTS_PATH/projects/edoras.sh"
