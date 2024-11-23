@@ -4,5 +4,8 @@
     "activityBar.activeBackground": "#636366",
     "statusBar.foreground": "#636366",
     "statusBarItem.remoteForeground": "#636366"
-  }
+  },
+  "cSpell.words": [
+    "arya"
+  ]
 }
