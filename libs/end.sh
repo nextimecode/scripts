@@ -19,7 +19,7 @@ if [ -z "$1" ]; then
     -d '{
       "model": "gpt-4o-mini",
       "messages": [
-        {"role": "system", "content": "Im going to provide you with a git diff output. Based on the changes shown, generate a concise commit message in English that follows conventional commit guidelines. The commit message should be a single sentence and clearly describe the purpose of the changes. Here is the git diff:"},
+        {"role": "system", "content": "Im going to provide you with a git diff output. Based on the changes shown, generate a concise commit message in English that follows conventional commit guidelines. The commit message should be a single sentence and clearly describe the purpose of the changes, and must not exceed 100 characters. Here is the git diff:"},
         {"role": "user", "content": '"$diff_output"'}
       ]
     }')
