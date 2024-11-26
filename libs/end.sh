@@ -89,7 +89,7 @@ git push $NO_VERIFY && { printf "${SUCCESS}\n✅ Congratulations, Pedro! Changes
   END_TIME=$(date +%s)
   ELAPSED_TIME=$((END_TIME - START_TIME))
 
-printf "${INFO}${CLOCK_EMOJI} Time taken:${RESET} ${ELAPSED_TIME} seconds.${RESET}\n"
+printf "${INFO}${CLOCK_EMOJI}  Time taken:${RESET} ${ELAPSED_TIME} seconds.${RESET}\n"
 
 # Open the Pull Request page --------------------------------
 
