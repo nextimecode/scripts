@@ -119,5 +119,7 @@ elif [ "$#" -ne 1 ]; then
     exit 1
 fi
 
+printf "\n${WARNING}${IA_EMOJI} Commit message:\n${RESET} ${CYAN}${commit_message}${RESET}\n"
+
 
 
