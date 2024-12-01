@@ -25,12 +25,13 @@ alias slack="$SCRIPTS_PATH/slack.sh"
 alias whats="$SCRIPTS_PATH/whats.sh"
 alias gather="$SCRIPTS_PATH/gather.sh"
 alias close="$SCRIPTS_PATH/close.sh"
-alias dev="$SCRIPTS_PATH/dev.sh"
 alias endgame="$SCRIPTS_PATH/endgame.sh"
 alias figma="$SCRIPTS_PATH/figma.sh"
 alias up="$SCRIPTS_PATH/update.sh"
 alias update="$SCRIPTS_PATH/update.sh"
-alias main="$SCRIPTS_PATH/main.sh"
+# git commands
+alias main="$SCRIPTS_PATH/git-commands/main.sh"
+alias dev="$SCRIPTS_PATH/git-commands/dev.sh"
 # pnpm aliases
 alias i="pnpm i"
 alias b="pnpm build"
@@ -53,7 +54,7 @@ alias push="git push"
 alias status="git status"
 #git hub aliases
 alias browse="gh browse"
-# my projects
+## my projects
 # stark
 alias arya="$SCRIPTS_PATH/projects/stark/arya.sh"
 alias bran="$SCRIPTS_PATH/projects/stark/bran.sh"
