@@ -6,7 +6,7 @@ START_TIME=$(date +%s)
 # Import the constants
 source /Users/pedroduarte/dev/scripts/constants.sh
 
-diff_output=$(git diff | jq -R -s .)
+diff_output=$(git diff | jq -Rs .)
 
 export $(grep -v '^#' /Users/pedroduarte/dev/scripts/.env | xargs)
 
