@@ -7,5 +7,3 @@ echo "\n${INFO}Executing git pull origin main${RESET}"
   git pull origin main
 echo "\n${INFO}Executing pnpm install${RESET}"
   pnpm install
-echo "\n${INFO}Executing pnpm build${RESET}"
-  pnpm build
