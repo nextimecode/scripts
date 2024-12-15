@@ -40,13 +40,8 @@ else
   # Escolhe uma mensagem aleatória
   RANDOM_MESSAGE="${MESSAGES[$RANDOM % ${#MESSAGES[@]}]}"
 
-  # Separa a mensagem em português e inglês
-  PORTUGUESE_MESSAGE=$(echo "$RANDOM_MESSAGE" | sed -n '1p')
-  ENGLISH_MESSAGE=$(echo "$RANDOM_MESSAGE" | sed -n '2p')
-
   # Imprime as mensagens em suas respectivas cores
-  printf "${BRIGHT_GREEN}${IA_EMOJI} %s${RESET}\n" "$PORTUGUESE_MESSAGE"
-  printf "${CYAN} %s${RESET}\n\n" "$ENGLISH_MESSAGE"
+  printf "${BRIGHT_GREEN}${IA_EMOJI} %s${RESET}\n" "$RANDOM_MESSAGE"
 fi
 
 # Tenta mudar para o diretório /dev
