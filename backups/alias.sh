@@ -28,10 +28,10 @@ alias close="$SCRIPTS_PATH/close.sh"
 alias endgame="$SCRIPTS_PATH/endgame.sh"
 alias figma="$SCRIPTS_PATH/figma.sh"
 alias up="$SCRIPTS_PATH/update.sh"
-alias update="$SCRIPTS_PATH/update.sh"
 # git commands
-alias main="$SCRIPTS_PATH/git-commands/main.sh"
 alias dev="$SCRIPTS_PATH/git-commands/dev.sh"
+alias main="$SCRIPTS_PATH/git-commands/main.sh"
+alias update="$SCRIPTS_PATH/git-commands/update.sh"
 # pnpm aliases
 alias i="pnpm i"
 alias b="pnpm build"
