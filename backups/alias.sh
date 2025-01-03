@@ -57,7 +57,7 @@ alias status="git status"
 alias browse="gh browse"
 ## my projects
 # martell
-alias oberyn="$SCRIPTS_PATH/projects/martell/oberyn.sh"
+alias nymeria="$SCRIPTS_PATH/projects/martell/nymeria.sh"
 # stark
 alias arya="$SCRIPTS_PATH/projects/stark/arya.sh"
 alias bran="$SCRIPTS_PATH/projects/stark/bran.sh"
