@@ -6,7 +6,8 @@ START_TIME=$(date +%s)
 # Import the constants
 source /Users/pedroduarte/dev/scripts/constants.sh
 
-diff_output=$(git diff | jq -Rs .)
+MAX_TOKENS=40000000
+diff_output=$(git diff | jq -Rs . | cut -c 1-$MAX_TOKENS)
 
 export $(grep -v '^#' /Users/pedroduarte/dev/scripts/.env | xargs)
 
