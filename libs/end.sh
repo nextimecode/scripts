@@ -6,25 +6,39 @@ START_TIME=$(date +%s)
 # Import the constants
 source /Users/pedroduarte/dev/scripts/constants.sh
 
-MAX_TOKENS=128000
-MAX_CHARS=$((MAX_TOKENS * 4))
-diff_output=$(git diff | jq -Rs . | cut -c 1-$MAX_CHARS)
+# Obter o git diff e garantir que o JSON seja válido após truncar
+diff_output=$(git diff | jq -Rs .)
+
+# Verificar o tamanho do diff_output e truncar se necessário
+if [ ${#diff_output} -gt "$MAX_CHARS" ]; then
+  truncated_diff=$(echo "$diff_output" | head -c $MAX_CHARS)
+  diff_output=$(echo "$truncated_diff" | jq -Rs .)
+fi
 
 export $(grep -v '^#' /Users/pedroduarte/dev/scripts/.env | xargs)
 
 if [ -z "$1" ]; then
   printf "\n${ERROR}${IA_EMOJI} No commit message provided. Generating one using git diff...${RESET}\n"
 
+  # Criar o payload JSON corretamente
+  payload=$(jq -n \
+    --arg model "gpt-4o-mini" \
+    --arg role "system" \
+    --arg system_msg "Im going to provide you with a git diff output. Based on the changes shown, generate a concise commit message in English that follows conventional commit guidelines. The commit message should be a single sentence and clearly describe the purpose of the changes, and must not exceed 100 characters. Here is the git diff:" \
+    --arg user_content "$diff_output" \
+    '{
+      model: $model,
+      messages: [
+        {role: $role, content: $system_msg},
+        {role: "user", content: $user_content}
+      ]
+    }')
+
+  # Enviar o payload para a API
   response=$(curl -s https://api.openai.com/v1/chat/completions \
     -H "Content-Type: application/json" \
     -H "Authorization: Bearer $Q_API_KEY" \
-    -d '{
-      "model": "gpt-4o-mini",
-      "messages": [
-        {"role": "system", "content": "Im going to provide you with a git diff output. Based on the changes shown, generate a concise commit message in English that follows conventional commit guidelines. The commit message should be a single sentence and clearly describe the purpose of the changes, and must not exceed 100 characters. Here is the git diff:"},
-        {"role": "user", "content": '"$diff_output"'}
-      ]
-    }')
+    -d "$payload")
 
   echo "$response"
 
