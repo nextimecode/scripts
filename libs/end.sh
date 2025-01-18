@@ -6,8 +6,15 @@ START_TIME=$(date +%s)
 # Import the constants
 source /Users/pedroduarte/dev/scripts/constants.sh
 
+# Máximo de tokens permitido pela API
+MAX_TOKENS=128000
+MAX_CHARS=$((MAX_TOKENS * 1)) # Aproximadamente 4 caracteres por token
+
 # Obter o git diff e garantir que o JSON seja válido após truncar
 diff_output=$(git diff | jq -Rs .)
+
+# Remover caracteres de controle do JSON (U+0000 a U+001F)
+diff_output=$(echo "$diff_output" | tr -d '\000-\037')
 
 # Verificar o tamanho do diff_output e truncar se necessário
 if [ ${#diff_output} -gt "$MAX_CHARS" ]; then
