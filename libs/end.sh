@@ -8,7 +8,7 @@ source /Users/pedroduarte/dev/scripts/constants.sh
 
 # Máximo de tokens permitido pela API
 MAX_TOKENS=128000
-MAX_CHARS=$((MAX_TOKENS * 1)) # Aproximadamente 4 caracteres por token
+MAX_CHARS=$((MAX_TOKENS * 2)) # Aproximadamente 4 caracteres por token
 
 # Obter o git diff e garantir que o JSON seja válido após truncar
 diff_output=$(git diff | jq -Rs .)
