@@ -7,7 +7,7 @@ alias gmail="$SCRIPTS_PATH/programs/gmail.sh"
 alias duo="$SCRIPTS_PATH/programs/duo.sh"
 #libs
 alias end="$SCRIPTS_PATH/libs/end.sh"
-alias e="$SCRIPTS_PATH/libs/end.sh"
+alias e="$SCRIPTS_PATH/libs/e.sh"
 alias pr="$SCRIPTS_PATH/libs/pr.sh"
 alias studio="$SCRIPTS_PATH/libs/studio.sh"
 alias co="$SCRIPTS_PATH/libs/nest.sh"

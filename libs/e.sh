@@ -100,8 +100,42 @@ else
   printf "No uncommitted changes.${RESET}\n"
 fi
 
+printf "\n${INFO}Executing the git push command${RESET}\n\n"
+
+git push $NO_VERIFY && { printf "${SUCCESS}\n✅ Congratulations, Pedro! Changes pushed successfully.${RESET}\n\n"; } || { printf "${ERROR}\n❌ Error: Failed to push changes.${RESET}\n"; exit 1; }
+
+# Open the Pull Request page --------------------------------
+
+# Check the number of arguments provided
+if [ "$#" -eq 0 ]; then
+    # Attempt to open the current branch's PR in the web browser using the GitHub CLI
+    printf "\n${WARNING}${IA_EMOJI} Commit message: ${RESET}${CYAN}${commit_message}${RESET}\n"
+    printf "\n${INFO}${CHECKING_EMOJI} Checking if there is an open Pull Request for the current branch...${RESET}\n"
+    # Capture the output and exit code of `gh pr view --web`
+    output=$(gh pr view 2>&1)
+    exit_code=$?
+
+    # Check if the command was successful
+    if [ $exit_code -eq 0 ]; then
+        # If the PR was found and the view command was successful
+        printf "There is already an open Pull Request for the current branch${RESET}\n\n"
+    else
+        printf "\n${ERROR}${ERROR_EMOJI} Error: $output${RESET}\n\n"
+        # If no PR was found, try to create one
+        if echo "$output" | grep -q "no pull requests found"; then
+          gh pr create --assignee @me && gh pr view --web
+        fi
+        printf "\n"
+    fi
+    exit 0
+elif [ "$#" -ne 1 ]; then
+    # Error message if more than one argument or incorrect usage
+    printf "${ERROR}${ERROR_EMOJI} Error: Only one argument is allowed${RESET}\n\n"
+    exit 1
+fi
+
 # Calculate elapsed time
-END_TIME=$(date +%s)
-ELAPSED_TIME=$((END_TIME - START_TIME))
+  END_TIME=$(date +%s)
+  ELAPSED_TIME=$((END_TIME - START_TIME))
 
 printf "${INFO}${CLOCK_EMOJI}  Time taken:${RESET} ${ELAPSED_TIME} seconds.${RESET}\n"
