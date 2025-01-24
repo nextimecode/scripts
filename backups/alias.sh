@@ -61,6 +61,7 @@ alias nymeria="$SCRIPTS_PATH/projects/martell/nymeria.sh"
 # stark
 alias arya="$SCRIPTS_PATH/projects/stark/arya.sh"
 alias bran="$SCRIPTS_PATH/projects/stark/bran.sh"
+alias ned="$SCRIPTS_PATH/projects/stark/ned.sh"
 alias sansa="$SCRIPTS_PATH/projects/stark/sansa.sh"
 # rohan
 alias dunharrow="$SCRIPTS_PATH/projects/dunharrow.sh"
