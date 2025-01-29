@@ -1,9 +1,9 @@
 {
   "workbench.colorCustomizations": {
-    "activityBar.inactiveForeground": "#636366",
-    "activityBar.activeBackground": "#636366",
-    "statusBar.foreground": "#636366",
-    "statusBarItem.remoteForeground": "#636366"
+    "activityBar.inactiveForeground": "#30D158",
+    "activityBar.activeBackground": "#30D158",
+    "statusBar.foreground": "#30D158",
+    "statusBarItem.remoteForeground": "#30D158"
   },
   "cSpell.words": [
     "arya",
