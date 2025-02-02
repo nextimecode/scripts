@@ -3,7 +3,7 @@
     "activityBar.inactiveForeground": "#30D158",
     "statusBar.foreground": "#30D158",
     "activityBar.activeBorder": "#30D158",
-    "activityBar.foreground": "#fff",
+    "activityBar.foreground": "#30D158",
     "statusBarItem.remoteForeground": "#000000",
     "statusBarItem.remoteBackground": "#30D158"
   },
