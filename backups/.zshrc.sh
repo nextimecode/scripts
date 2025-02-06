@@ -8,6 +8,7 @@ export NVM_DIR="$HOME/.nvm"
 
 export PATH="$PATH:$HOME/.npm-global/bin"
 export PATH="$PATH:$(npm bin -g)"
+echo 'export PATH="/opt/homebrew/opt/postgresql@16/bin:$PATH"' >> ~/.zshrc
 
 export ZSH="$HOME/.oh-my-zsh"
 ZSH_THEME="spaceship"
